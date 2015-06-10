@@ -94,6 +94,4 @@ public class Cliente {
 	public void setDataDiRegistrazione(Date dataDiRegistrazione) {
 		this.dataDiRegistrazione = dataDiRegistrazione;
 	}
-
-
 }
