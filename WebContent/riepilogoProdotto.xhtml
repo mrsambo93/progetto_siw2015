@@ -14,15 +14,19 @@
 		<li>Prezzo: <h:outputText value="${controllerProdotto.prezzo}"></h:outputText></li>
 	</ul>
 	<div>
-		<h:button value="annulla" outcome="nuovoProdotto"/>
-	</div>
-	<div>
 		<h:form>
-			<h:commandButton action="#{controllerProdotto.creaProdotto}" value="conferma" outcome="operazioniAdmin"/>
+			<div>
+				<h:commandButton id="submit" value="annulla" action="nuovoProdotto" />
+			</div>
+			<div>
+				<h:commandButton action="#{controllerProdotto.creaProdotto}"
+					value="conferma" outcome="operazioniAdmin" />
+			</div>
 		</h:form>
 	</div>
 	<div>
-		<h:button value="torna alla pagina di amministrazione" outcome="operazioniAdmin"/>
+		<h:button value="torna alla pagina di amministrazione"
+			outcome="operazioniAdmin" />
 	</div>
 </h:body>
 </html>
