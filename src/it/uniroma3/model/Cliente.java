@@ -7,7 +7,7 @@ import java.util.*;
 @Entity
 @Table(name="Tabella_Cliente")
 @NamedQuery(name = "findAllClienti", query = "SELECT c FROM Cliente c")
-//prova 2 jsf
+
 public class Cliente {
 
 	@Id
