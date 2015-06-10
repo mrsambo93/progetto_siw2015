@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Conferma prodotto</title>
+</h:head>
+<h:body>
+	<h1>Riepilogo</h1>
+	<ul>
+		<li>Nome: <h:outputText value="${controllerProdotto.nome}"></h:outputText></li>
+		<li>Codice: <h:outputText value="${controllerProdotto.codice}"></h:outputText></li>
+		<li>Descrizione: <h:outputText
+				value="${controllerProdotto.descrizione}"></h:outputText></li>
+		<li>Prezzo: <h:outputText value="${controllerProdotto.prezzo}"></h:outputText></li>
+	</ul>
+	<div>
+		<h:button value="annulla" outcome="nuovoProdotto"/>
+	</div>
+	<div>
+		<h:form>
+			<h:commandButton action="#{controllerProdotto.creaProdotto}" value="conferma" outcome="operazioniAdmin"/>
+		</h:form>
+	</div>
+	<div>
+		<h:button value="torna alla pagina di amministrazione" outcome="operazioniAdmin"/>
+	</div>
+</h:body>
+</html>

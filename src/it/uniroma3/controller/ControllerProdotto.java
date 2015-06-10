@@ -24,7 +24,7 @@ public class ControllerProdotto {
 	private Prodotto prodotto;
 	private List<Prodotto> catalogoProdotti;
 	
-	public String creaProdotto(String nome, String codice, String descrizione, Float prezzo) {
+	public String creaProdotto() {
 		this.prodotto = this.facadeProdotto.creaProdotto(nome, codice, descrizione, prezzo);
 		return "prodotto";	
 	}
