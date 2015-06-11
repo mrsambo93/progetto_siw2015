@@ -7,8 +7,9 @@ import it.uniroma3.model.Prodotto;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
-
+@SessionScoped
 @ManagedBean(name = "controllerProdotto")
 public class ControllerProdotto {
 	

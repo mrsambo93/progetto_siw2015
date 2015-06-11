@@ -41,10 +41,7 @@ public class Fornitore {
     @ManyToMany
 	private List<Prodotto> prodotti;
     
-
     public Fornitore() {}
-    
-   // Getters and Setters
 
 	public Long getId() {
 		return id;

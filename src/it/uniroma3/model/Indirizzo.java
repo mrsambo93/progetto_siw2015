@@ -38,15 +38,7 @@ public class Indirizzo {
     @Column(nullable = false)
     private String stato;
 
-    @OneToOne(mappedBy = "indirizzo", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
-    private Cliente cliente;
-
-    @OneToOne(mappedBy = "indirizzo", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
-    private Fornitore fornitore;
-
     public Indirizzo() {}
-    
-    /* Getters and Setters */
 
 	public Long getId() {
 		return id;
@@ -94,22 +86,6 @@ public class Indirizzo {
 
 	public void setStato(String stato) {
 		this.stato = stato;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	public Fornitore getFornitore() {
-		return fornitore;
-	}
-
-	public void setFornitore(Fornitore fornitore) {
-		this.fornitore = fornitore;
 	}
 
 }

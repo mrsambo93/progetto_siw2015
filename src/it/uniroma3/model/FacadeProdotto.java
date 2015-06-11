@@ -19,12 +19,12 @@ public class FacadeProdotto {
 	//UC4
 	public Prodotto creaProdotto(String nome, String codice, String descrizione, Float prezzo) {
 		Prodotto prodotto = new Prodotto(nome,codice,descrizione,prezzo);	
-		Prodotto temp = this.em.find(Prodotto.class, prodotto.getCodice());
-		if(temp != null) {
-			this.em.persist(prodotto);
-			return prodotto;
-		}
-		return null;
+//		Prodotto temp = this.em.find(Prodotto.class, prodotto.getCodice());
+//		if(temp != null) {
+		this.em.persist(prodotto);
+		return prodotto;
+//		}
+//		return null;
 	}
 	
 	//UC1,UC2
