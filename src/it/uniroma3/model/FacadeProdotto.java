@@ -1,16 +1,13 @@
 package it.uniroma3.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.NamedQuery;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 @Stateless(name = "facadeProdotto")
-@NamedQuery(name = "catalogoProdotti", query = "SELECT p FROM Prodotto p")
 public class FacadeProdotto {
 	
 	@PersistenceContext(unitName = "unit-progetto")
@@ -29,10 +26,8 @@ public class FacadeProdotto {
 	
 	//UC1,UC2
 	public List<Prodotto> catalogoProdotti() {
-		List<Prodotto> catalogo = new ArrayList<>();
 		TypedQuery<Prodotto> query = this.em.createNamedQuery("catalogoProdotti", Prodotto.class);
-		catalogo = query.getResultList();
-		return catalogo;
+		return query.getResultList();
 	}
 	
 	public Prodotto cercaProdotto(Long idProdotto) {

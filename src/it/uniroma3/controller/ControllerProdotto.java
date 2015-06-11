@@ -29,14 +29,14 @@ public class ControllerProdotto {
 		this.prodotto = this.facadeProdotto.creaProdotto(nome, codice, descrizione, prezzo);
 		if(this.prodotto==null)
 			return "error";
-		return "success";
+		return "prodottoInserito";
 	}
 	
 	public String listinoProdotti() {
 		this.catalogoProdotti = this.facadeProdotto.catalogoProdotti();
 //		if(this.catalogoProdotti==null)
 //			return "error";
-		return "success";
+		return "listinoProdotti";
 	}
 	
 	public String cercaProdotto(Long id) {
