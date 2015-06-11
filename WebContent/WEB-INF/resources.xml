@@ -4,7 +4,7 @@
     jdbcDriver = org.postgresql.Driver
     jdbcUrl = jdbc:postgresql://localhost/siwEsame
     userName = postgres
-    password = 03101993
+    password = postgres
     jtaManaged = true
     defaultAutoCommit = false
   </Resource>
