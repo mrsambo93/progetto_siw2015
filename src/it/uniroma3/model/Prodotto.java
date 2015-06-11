@@ -8,7 +8,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Column;
 
 @Entity
-@NamedQuery(name = "findAllProdotti", query = "SELECT p FROM Prodotto p")
+@NamedQuery(name = "catalogoProdotti", query = "SELECT p FROM Prodotto p")
 public class Prodotto {
 	
     @Id
@@ -106,7 +106,7 @@ public class Prodotto {
 		sb.append(", codice='").append(codice);
 		sb.append(", descrizione='").append(descrizione); 
 		sb.append(", prezzo=").append(prezzo); 
-		sb.append(", quantit� in Magazzino='").append(qtaMagazzino);
+		sb.append(", quantita in Magazzino='").append(qtaMagazzino);
 
 		sb.append("}\n");
 		return sb.toString();

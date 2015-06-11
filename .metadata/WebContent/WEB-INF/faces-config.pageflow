@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14338553580610" configfile="/progetto_siw2015/WebContent/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14338553580610" configfile="/progetto_siw2015/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="178" id="pf14340322377520" outlinks="pf14340322377531" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="prodottoInserito.xhtml" x="384" y="168" id="pf14340322377532" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14340322377531" path="prodottoInserito.xhtml"/>
+  <links id="pf14340322377531" target="pf14340322377532" source="pf14340322377520" outcome="success" fromaction="#{controllerProdotto.creaProdotto()}"/>
+</pageflow:Pageflow>

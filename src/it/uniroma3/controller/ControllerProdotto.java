@@ -27,12 +27,16 @@ public class ControllerProdotto {
 	
 	public String creaProdotto() {
 		this.prodotto = this.facadeProdotto.creaProdotto(nome, codice, descrizione, prezzo);
-		return "success";	
+		if(this.prodotto==null)
+			return "error";
+		return "success";
 	}
 	
-	public String cercaCatalogoProdotti() {
-		this.catalogoProdotti = this.facadeProdotto.cercaCatalogoProdotti();
-		return "catalogoProdotti";
+	public String listinoProdotti() {
+		this.catalogoProdotti = this.facadeProdotto.catalogoProdotti();
+//		if(this.catalogoProdotti==null)
+//			return "error";
+		return "success";
 	}
 	
 	public String cercaProdotto(Long id) {

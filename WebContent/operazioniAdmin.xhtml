@@ -17,11 +17,9 @@
 	<div class="container-fluid">
 		<h1>Benenvenuto amministratore!</h1>
 		<ul>
-			<li><h:link value="Aggiungi prodotto" outcome="nuovoProdotto" /></li>
-			<li><h:form>
-					<h:commandLink action="#{controllerProdotto.cercaCatalogoProdotti}"
-						value="Visualizza il catalogo dei prodotti" />
-				</h:form></li>
+			<li><h:link value="Aggiungi Prodotto" outcome="nuovoProdotto" /></li>
+			<h:commandButton action="#{controllerProdotto.listinoProdotti()}"
+					value="Listino Prodotti"/>
 		</ul>
 	</div>
 </h:body>

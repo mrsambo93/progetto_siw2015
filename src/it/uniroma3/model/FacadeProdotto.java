@@ -10,7 +10,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 @Stateless(name = "facadeProdotto")
-@NamedQuery(name = "trovaProdotti", query = "SELECT p FROM Prodotto p")
+@NamedQuery(name = "catalogoProdotti", query = "SELECT p FROM Prodotto p")
 public class FacadeProdotto {
 	
 	@PersistenceContext(unitName = "unit-progetto")
@@ -28,9 +28,9 @@ public class FacadeProdotto {
 	}
 	
 	//UC1,UC2
-	public List<Prodotto> cercaCatalogoProdotti() {
+	public List<Prodotto> catalogoProdotti() {
 		List<Prodotto> catalogo = new ArrayList<>();
-		TypedQuery<Prodotto> query = this.em.createNamedQuery("trovaProdotti", Prodotto.class);
+		TypedQuery<Prodotto> query = this.em.createNamedQuery("catalogoProdotti", Prodotto.class);
 		catalogo = query.getResultList();
 		return catalogo;
 	}
