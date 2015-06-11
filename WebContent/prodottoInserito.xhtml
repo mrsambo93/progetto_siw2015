@@ -2,10 +2,10 @@
 <html xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-	<title>Conferma prodotto</title>
+	<title>Prodotto Inserito</title>
 </h:head>
 <h:body>
-	<h1>Riepilogo</h1>
+	<h1>Hai inserito con successo il seguente prodotto</h1>
 	<ul>
 		<li>Nome: <h:outputText value="${controllerProdotto.nome}"></h:outputText></li>
 		<li>Codice: <h:outputText value="${controllerProdotto.codice}"></h:outputText></li>
@@ -13,20 +13,9 @@
 				value="${controllerProdotto.descrizione}"></h:outputText></li>
 		<li>Prezzo: <h:outputText value="${controllerProdotto.prezzo}"></h:outputText></li>
 	</ul>
-	<div>
-		<h:form>
-			<div>
-				<h:commandButton id="submit" value="annulla" action="nuovoProdotto" />
-			</div>
-			<div>
-				<h:commandButton action="#{controllerProdotto.creaProdotto()}"
-					value="conferma"/>
-			</div>
-		</h:form>
-	</div>
-	<div>
-		<h:button value="torna alla pagina di amministrazione"
-			outcome="operazioniAdmin" />
-	</div>
+	<h:button value="Inserisci nuovo Prodotto"
+		outcome="nuovoProdotto" />
+	<h:button value="torna alla pagina di amministrazione"
+		outcome="operazioniAdmin" />
 </h:body>
 </html>

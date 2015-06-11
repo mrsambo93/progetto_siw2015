@@ -27,7 +27,7 @@ public class ControllerProdotto {
 	
 	public String creaProdotto() {
 		this.prodotto = this.facadeProdotto.creaProdotto(nome, codice, descrizione, prezzo);
-		return "prodotto";	
+		return "success";	
 	}
 	
 	public String cercaCatalogoProdotti() {
