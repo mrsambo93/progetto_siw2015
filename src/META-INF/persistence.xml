@@ -7,6 +7,7 @@
 		<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
 		<jta-data-source>PostgreSQL Database</jta-data-source>
 		<class>it.uniroma3.model.Product</class>
+		<class>it.uniroma3.model.Cliente</class>
 		<properties>
 			<property name="openjpa.jdbc.SynchronizeMappings" 
 							value="buildSchema(ForeignKeys=true)" />

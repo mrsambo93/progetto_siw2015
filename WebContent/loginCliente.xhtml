@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Login Utente</title>
+</h:head>
+<h:body>
+	<h1>Accedi</h1>
+	<h:form>
+		<div>
+			Qual è il tuo indirizzo e-mail?
+			<h:inputText value="#{controllerCliente.email}" required="true"
+				requiredMessage="Campo obbligatorio" id="email">
+			</h:inputText>
+			<h:message for="email" styleClass="error" />
+		</div>
+		<div>
+			Hai già una password?
+			<h:inputText value="#{controllerCliente.password}" required="true"
+				requiredMessage="Campo obbligatorio" id="password">
+			</h:inputText>
+			<h:message for="password" styleClass="error" />
+		</div>
+		<div>
+			<h:commandButton id="accedi" value="accedi" action="#{controllerCliente.autenticaCliente()}" />
+		</div>
+	</h:form>
+	<h:button value="torna indietro" outcome="operazioniAdmin" />
+</h:body>
+</html>

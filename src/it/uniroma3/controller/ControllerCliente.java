@@ -32,10 +32,10 @@ public class ControllerCliente {
 		return "success";
 	}
 	
-	public String autenticaCliente(String password) {
-		if(!this.facadeCliente.autenticaAutente(email, password))
-			return "failure";
-		return "success";
+	public String autenticaCliente() {
+		if(this.facadeCliente.autenticaAutente(email, password))
+			return "success";
+		return "failure";
 	}
 	
 	public Long getId() {
