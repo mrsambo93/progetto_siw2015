@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14338553580610" configfile="/progetto_siw2015/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="178" id="pf14340322377520" path="*"/>
-  <nodes xsi:type="pageflow:PFPage" name="prodottoInserito.xhtml" x="338" y="562" id="pf14340322377532" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14341001889030" path="prodottoInserito.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="riepilogoProdotto.xhtml" x="122" y="562" id="pf14341001889041" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14341001889030" path="riepilogoProdotto.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="operazioniAdmin.xhtml" x="122" y="946" id="pf14341001889042" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14341001889043" path="operazioniAdmin.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="listinoProdotti.xhtml" x="338" y="946" id="pf14341001889044" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14341001889043" path="listinoProdotti.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="prodottoInserito.xhtml" x="338" y="562" id="pf14340322377532" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14341001889030" path="/faces/prodottoInserito.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="riepilogoProdotto.xhtml" x="122" y="562" id="pf14341001889041" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14341001889030" path="/riepilogoProdotto.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="operazioniAdmin.xhtml" x="122" y="946" id="pf14341001889042" referenceLink="//@navigationRule.1/@fromViewId|" path="operazioniAdmin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="listinoProdotti.xhtml" x="122" y="1330" id="pf14341001889044" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" path="listinoProdotti.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="prodottoInserito.xhtml" x="708" y="288" id="pf14341041122415" path="/prodottoInserito.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="riepilogoProdotto.xhtml" x="312" y="312" id="pf14341041122416" path="/riepilogoProdotto.xhtml"/>
   <links id="pf14341001889030" target="pf14340322377532" source="pf14341001889041" outcome="success" fromaction="#{controllerProdotto.creaProdotto()}"/>
-  <links id="pf14341001889043" target="pf14341001889044" source="pf14341001889042" outcome="success" fromaction="#{controllerProdotto.listinoProdotti()}"/>
 </pageflow:Pageflow>

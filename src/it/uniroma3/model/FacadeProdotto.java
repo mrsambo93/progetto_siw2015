@@ -34,4 +34,9 @@ public class FacadeProdotto {
 		return this.em.find(Prodotto.class, idProdotto);
 	}
 	
+	public void aggiungiQtaProdotto(Long idProdotto, Integer qtaMagazzino) {
+		Prodotto prodotto = this.em.find(Prodotto.class, idProdotto);
+		prodotto.aggiungiQtaMagazzino(qtaMagazzino);
+	}
+	
 }

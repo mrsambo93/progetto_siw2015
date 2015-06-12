@@ -7,7 +7,6 @@ import java.util.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "Tabella_Ordini")
 @NamedQuery(name = "findAllOrdini", query = "SELECT o FROM Ordine o")
 public class Ordine {
 

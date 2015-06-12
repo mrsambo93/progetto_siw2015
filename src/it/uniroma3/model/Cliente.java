@@ -5,7 +5,6 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@Table(name="Tabella_Cliente")
 @NamedQuery(name = "findAllClienti", query = "SELECT c FROM Cliente c")
 
 public class Cliente {

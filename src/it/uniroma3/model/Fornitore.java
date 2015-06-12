@@ -18,7 +18,6 @@ import it.uniroma3.model.Prodotto;
 
 
 @Entity
-@Table(name="Tabella_Fornitori")
 @NamedQuery(name = "findAllFornitori", query = "SELECT f FROM Fornitori f")
 public class Fornitore {
 	

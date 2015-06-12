@@ -27,8 +27,8 @@ public class ControllerProdotto {
 	
 	public String creaProdotto() {
 		this.prodotto = this.facadeProdotto.creaProdotto(nome, codice, descrizione, prezzo);
-		if(this.prodotto==null)
-			return "failure";
+//		if(this.prodotto==null)
+//			return "failure";
 		return "success";
 	}
 	
@@ -40,6 +40,11 @@ public class ControllerProdotto {
 	public String cercaProdotto(String id) {
 		this.prodotto = this.facadeProdotto.cercaProdotto(Long.parseLong(id));
 		return "dettagliProdotto";
+	}
+	
+	public String aggiungiQtaProdotto(String id) {
+		this.facadeProdotto.aggiungiQtaProdotto(Long.parseLong(id), qtaMagazzino);
+		return this.listinoProdotti();
 	}
 
 	public Long getId() {
