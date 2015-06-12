@@ -6,7 +6,6 @@ import java.util.*;
 
 @Entity
 @NamedQuery(name = "findAllClienti", query = "SELECT c FROM Cliente c")
-
 public class Cliente {
 
 	@Id
@@ -32,12 +31,16 @@ public class Cliente {
 	
 	@Column(nullable=false)
 	private Indirizzo indirizzo;
+	
+	@Column(nullable=false)
+	private String password;
 
-	public Cliente(String nome, String cognome,Indirizzo indirizzo, String email){
+	public Cliente(String nome, String cognome,Indirizzo indirizzo, String email, String password){
 		this.nome = nome;
 		this.cognome = cognome;
 		this.indirizzo = indirizzo;
 		this.email = email;
+		this.password = password;
 	}
 
 	public Long getId() {
@@ -90,6 +93,18 @@ public class Cliente {
 
 	public void setDataDiRegistrazione(Date dataDiRegistrazione) {
 		this.dataDiRegistrazione = dataDiRegistrazione;
+	}
+	
+	public String getPassword(){
+		return this.password;
+	}
+	
+	public void setPassword(String password){
+		this.password=password;
+	}
+	
+	public boolean verificaCredenziali(String password){
+		return this.password.equals(password);
 	}
 }
 
