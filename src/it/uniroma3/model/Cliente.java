@@ -8,7 +8,7 @@ import java.util.*;
 @NamedQuery(name = "findAllClienti", query = "SELECT c FROM Cliente c")
 public class Cliente {
 
-	@Id
+	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
@@ -18,6 +18,7 @@ public class Cliente {
 	@Column(nullable=false)
 	private String cognome;
 
+	@Id
 	@Column(nullable=false)
 	private String email;
 
