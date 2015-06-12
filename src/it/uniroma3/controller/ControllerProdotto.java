@@ -28,20 +28,18 @@ public class ControllerProdotto {
 	public String creaProdotto() {
 		this.prodotto = this.facadeProdotto.creaProdotto(nome, codice, descrizione, prezzo);
 		if(this.prodotto==null)
-			return "error";
-		return "prodottoInserito";
+			return "failure";
+		return "success";
 	}
 	
 	public String listinoProdotti() {
 		this.catalogoProdotti = this.facadeProdotto.catalogoProdotti();
-//		if(this.catalogoProdotti==null)
-//			return "error";
 		return "listinoProdotti";
 	}
 	
-	public String cercaProdotto(Long id) {
-		this.prodotto = this.facadeProdotto.cercaProdotto(id);
-		return "prodotto";
+	public String cercaProdotto(String id) {
+		this.prodotto = this.facadeProdotto.cercaProdotto(Long.parseLong(id));
+		return "dettagliProdotto";
 	}
 
 	public Long getId() {

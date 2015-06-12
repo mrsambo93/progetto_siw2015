@@ -11,12 +11,4 @@
 			<to-view-id>prodottoInserito.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	<navigation-rule>
-		<from-view-id>operazioniAdmin.xhtml</from-view-id>
-		<navigation-case>
-			<from-action>#{controllerProdotto.listinoProdotti()}</from-action>
-			<from-outcome>success</from-outcome>
-			<to-view-id>listinoProdotti.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
 </faces-config>
