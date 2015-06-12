@@ -9,8 +9,6 @@
 			<from-action>#{controllerProdotto.creaProdotto()}</from-action>
 			<from-outcome>success</from-outcome>
 			<to-view-id>/faces/prodottoInserito.xhtml</to-view-id>
-<<<<<<< HEAD
-=======
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
@@ -19,7 +17,6 @@
 			<from-action>#{controllerCliente.autenticaCliente()}</from-action>
 			<from-outcome>success</from-outcome>
 			<to-view-id>/faces/acessoEffettuatoCorrettamente.xhtml</to-view-id>
->>>>>>> master
 		</navigation-case>
 	</navigation-rule>
 </faces-config>
