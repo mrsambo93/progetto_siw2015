@@ -1,7 +1,16 @@
-<!DOCTYPE html>
-<html xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" >
+<html lang="en" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-<title>E-Commerce</title>
+
+	<title>Aggiungi Prodotto</title>
+	<meta charset="utf-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"></link>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script
+		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </h:head>
 <h:body>
 	<h1>Aggiungi nuovo prodotto</h1>
@@ -39,6 +48,15 @@
 				id="prezzo">
 			</h:inputText>
 			<h:message for="prezzo" styleClass="error"/>
+		</div>
+		<div>
+			Quantiit&#224;
+			<h:inputText value="#{controllerProdotto.qtaMagazzino}"
+				required="true"
+				requiredMessage="Campo obbligatorio"
+				id="qtaMagazzino">
+			</h:inputText>
+			<h:message for="qtaMagazzino" styleClass="error"/>
 		</div>
 		<div><h:commandButton id="submit" value="invia" action="riepilogoProdotto"/></div>
 	</h:form>
