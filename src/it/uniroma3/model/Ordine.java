@@ -1,11 +1,10 @@
 package it.uniroma3.model;
 	
 import javax.persistence.*;
-
 import java.util.*;
+import java.util.Date;
 
 @Entity
-@Table(name = "Tabella_Ordini")
 @NamedQuery(name = "findAllOrdini", query = "SELECT o FROM Ordine o")
 public class Ordine {
 
@@ -32,7 +31,6 @@ public class Ordine {
 	public Ordine(Cliente cliente) {
 		this.dataApertura = new Date();
 		this.cliente = cliente;
-		this.righeOrdine=new ArrayList<RigaOrdine>();
 	}
 
 	public Long getId() {

@@ -38,6 +38,10 @@ public class Prodotto {
 		this.qtaMagazzino = 0;
 	}
 	
+	public void aggiungiQtaMagazzino(Integer qta) {
+		this.qtaMagazzino += qta;
+	}
+	
 	public Long getId() {
 		return id;
 	}

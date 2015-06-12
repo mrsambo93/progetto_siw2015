@@ -16,7 +16,7 @@
 		<navigation-case>
 			<from-action>#{controllerCliente.autenticaCliente()}</from-action>
 			<from-outcome>success</from-outcome>
-			<to-view-id>/faces/acessoEffettuatoCorrettamente.xhtml</to-view-id>
+			<to-view-id>/faces/accessoEffettuatoCorrettamente.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 </faces-config>

@@ -20,9 +20,7 @@ public class FacadeCliente {
 	}
 	
 	public boolean autenticaAutente(String email, String password){
-		TypedQuery<Cliente> query = this.em.createQuery("SELECT c FROM Cliente c WHERE c.email = :email", Cliente.class)
-		.setParameter("email", email);
-		Cliente cliente = query.getSingleResult();
+		Cliente cliente =  this.em.find(Cliente.class, email);
 		return cliente.verificaCredenziali(password);
 	}
 }

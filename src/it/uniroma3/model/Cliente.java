@@ -5,11 +5,10 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@Table(name="Tabella_Cliente")
 @NamedQuery(name = "findAllClienti", query = "SELECT c FROM Cliente c")
 public class Cliente {
 
-	@Id
+	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
@@ -19,6 +18,7 @@ public class Cliente {
 	@Column(nullable=false)
 	private String cognome;
 
+	@Id
 	@Column(nullable=false)
 	private String email;
 

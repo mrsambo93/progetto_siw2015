@@ -9,7 +9,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Tabella_Indirizzi")
 @NamedQuery(name = "findAllIndirizzi", query = "SELECT i FROM Indirizzo i")
 public class Indirizzo {
 

@@ -13,7 +13,6 @@ import it.uniroma3.model.Ordine;
 import it.uniroma3.model.Prodotto;
 
 @Entity
-@Table(name="Tabella_RigaOrdine")
 @NamedQuery(name = "findAllRigheOrdine", query = "SELECT r FROM RigaOrdine r")
 public class RigaOrdine {
 

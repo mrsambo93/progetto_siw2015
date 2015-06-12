@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Prodotto</title>
+</h:head>
+<h:body>
+	<h1>Nuovi arrivi</h1>
+	<div>
+		Nome:
+		<h:outputText value="${controllerProdotto.prodotto.nome}"></h:outputText>
+	</div>
+	<div>
+		Quantita'; disponibile:
+		<h:outputText value="${controllerProdotto.prodotto.qtaMagazzino}"></h:outputText>
+	</div>
+	<div>
+		<h:form>
+			<div>
+				Quantita'; da aggiungere:
+				<h:inputText value="#{controllerProdotto.qtaMagazzino}"
+					required="true" requireMessage="Campo obbligatorio"
+					id="qtaMagazzino">
+				</h:inputText>
+				<h:message for="qtaMagazzino" styleClass="error" />
+			</div>
+			<div>
+				<h:commandButton value="invia" action="#{controllerProdotto.aggiungiQtaProdotto(controllerProdotto.prodotto.id)}"></h:commandButton>
+			</div>
+		</h:form>
+
+	</div>
+</h:body>
+</html>
