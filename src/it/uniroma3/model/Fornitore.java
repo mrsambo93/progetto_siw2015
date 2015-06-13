@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 import it.uniroma3.model.Indirizzo;
 import it.uniroma3.model.Prodotto;
