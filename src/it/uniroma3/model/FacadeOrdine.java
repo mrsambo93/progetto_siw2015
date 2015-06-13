@@ -8,5 +8,13 @@ import javax.persistence.PersistenceContext;
 public class FacadeOrdine {
 	@PersistenceContext(unitName = "unit-progetto")
 	private EntityManager em;
-
+	
+	
+	public Ordine creaOrdine(Cliente cliente){
+		return new Ordine(cliente);
+	}
+	
+	public Prodotto aggiungiProdottoAOrdine(Ordine ordine, Prodotto Prodotto, int qtaProdotto){
+		
+	}
 }	
