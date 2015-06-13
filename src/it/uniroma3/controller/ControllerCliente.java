@@ -21,9 +21,6 @@ public class ControllerCliente {
 	private String nome;
 	private String cognome;
 	private String email;
-<<<<<<< HEAD
-	private Date dataDiNascita;	
-=======
 	private String giorno;
 	private String mese;
 	private String anno;
@@ -33,7 +30,6 @@ public class ControllerCliente {
 	private String regione;
 	private String codicePostale;
 	private String stato;
->>>>>>> refs/heads/master
 	private Indirizzo indirizzo;
 	private String password;
 	private Cliente cliente;
@@ -72,10 +68,6 @@ public class ControllerCliente {
 	public GregorianCalendar getDataDiNascita() {
 		return dataDiNascita;
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/heads/master
 	public Indirizzo getIndirizzo() {
 		return indirizzo;
 	}
@@ -103,26 +95,22 @@ public class ControllerCliente {
 	public void setDataDiNascita(GregorianCalendar dataDiNascita) {
 		this.dataDiNascita = dataDiNascita;
 	}
-<<<<<<< HEAD
+	
 	public void setIndirizzo(Indirizzo indirizzo) {
 		this.indirizzo = indirizzo;
 	}
-=======
-
+	
 	public Indirizzo creaIndirizzo(String via, String citta, String regione, String codicePostale, String stato) {
 		return new Indirizzo(via, citta, regione, codicePostale, stato);
 	}
 
->>>>>>> refs/heads/master
 	public void setPassword(String password) {
 		this.password = password;
 	}
-<<<<<<< HEAD
+
 	public Cliente getCliente(){
 		return this.cliente;
 	}
-	
-=======
 
 	public String getVia() {
 		return via;
@@ -164,18 +152,9 @@ public class ControllerCliente {
 		this.stato = stato;
 	}
 
-	public Cliente getCliente() {
-		return cliente;
-	}
-
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-
-	public void setIndirizzo(Indirizzo indirizzo) {
-		this.indirizzo = indirizzo;
-	}
-
 	public String getGiorno() {
 		return giorno;
 	}
@@ -200,5 +179,4 @@ public class ControllerCliente {
 		this.anno = anno;
 	}
 
->>>>>>> refs/heads/master
 }

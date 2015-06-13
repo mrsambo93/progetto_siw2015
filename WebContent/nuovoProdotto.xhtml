@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <html lang="en" xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
@@ -47,61 +46,4 @@
 	</h:form>
 	<h:button value="torna indietro" outcome="operazioniAdmin"/>
 </h:body>
-=======
-<html lang="en" xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
-<h:head>
-
-	<title>Aggiungi Prodotto</title>
-	<meta charset="utf-8"></meta>
-	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-	<link rel="stylesheet"
-		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"></link>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script
-		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-</h:head>
-<h:body>
-	<h1>Aggiungi nuovo prodotto</h1>
-	<h:form>
-		<div>
-			Nome: 
-			<h:inputText value="#{controllerProdotto.nome}"
-				required="true"
-				requiredMessage="Campo obbligatorio"
-				id="nome">
-			</h:inputText>
-			<h:message for="nome" styleClass="error"/>
-		</div>
-		<div>
-			Codice: 
-			<h:inputText value="#{controllerProdotto.codice}"
-				required="true"
-				requiredMessage="Campo obbligatorio"
-				id="codice">
-			</h:inputText>
-			<h:message for="codice" styleClass="error"/>
-		</div>
-		<div>
-			Descrizione: 
-			<h:inputTextarea value="#{controllerProdotto.descrizione}"
-				rows="6"
-				id="descrizione">
-			</h:inputTextarea>
-		</div>
-		<div>
-			Prezzo: 
-			<h:inputText value="#{controllerProdotto.prezzo}"
-				required="true"
-				requiredMessage="Campo obbligatorio"
-				id="prezzo">
-			</h:inputText>
-			<h:message for="prezzo" styleClass="error"/>
-		</div>
-		<div><h:commandButton id="submit" value="invia" action="riepilogoProdotto"/></div>
-	</h:form>
-	<h:button value="torna indietro" outcome="operazioniAdmin"/>
-</h:body>
->>>>>>> refs/heads/master
 </html>
