@@ -1,7 +1,9 @@
-<!DOCTYPE html>
-<html xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" >
+<html lang="en" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-<title>E-Commerce</title>
+
+	<title>Aggiungi Prodotto</title>
+<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
 </h:head>
 <h:body>
 	<h1>Aggiungi nuovo prodotto</h1>
@@ -39,6 +41,15 @@
 				id="prezzo">
 			</h:inputText>
 			<h:message for="prezzo" styleClass="error"/>
+		</div>
+		<div>
+			Quantiit&#224;
+			<h:inputText value="#{controllerProdotto.qtaMagazzino}"
+				required="true"
+				requiredMessage="Campo obbligatorio"
+				id="qtaMagazzino">
+			</h:inputText>
+			<h:message for="qtaMagazzino" styleClass="error"/>
 		</div>
 		<div><h:commandButton id="submit" value="invia" action="riepilogoProdotto"/></div>
 	</h:form>

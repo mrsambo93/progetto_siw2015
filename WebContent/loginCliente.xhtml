@@ -1,8 +1,11 @@
-<!DOCTYPE html>
-<html xmlns:h="http://java.sun.com/jsf/html"
+<html lang="en" xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
+
 	<title>Login Utente</title>
+	<meta charset="utf-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
 </h:head>
 <h:body>
 	<h1>Accedi</h1>
@@ -15,14 +18,20 @@
 			<h:message for="email" styleClass="error" />
 		</div>
 		<div>
+
 			Hai già una password?
+			<h:selectOneRadio>
+				<f:selectItem itemValue="No" itemLabel="No, sono un nuovo cliente:" />
+				<f:selectItem itemValue="Si" itemLabel="Si, la mia password è:" />
+			</h:selectOneRadio>
 			<h:inputText value="#{controllerCliente.password}" required="true"
 				requiredMessage="Campo obbligatorio" id="password">
 			</h:inputText>
 			<h:message for="password" styleClass="error" />
 		</div>
 		<div>
-			<h:commandButton id="accedi" value="accedi" action="#{controllerCliente.autenticaCliente()}" />
+			<h:commandButton id="accedi" value="accedi"
+				action="#{controllerCliente.autenticaCliente()}" />
 		</div>
 	</h:form>
 	<h:button value="torna indietro" outcome="operazioniAdmin" />

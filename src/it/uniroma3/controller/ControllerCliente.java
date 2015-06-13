@@ -20,7 +20,6 @@ public class ControllerCliente {
 	private String cognome;
 	private String email;
 	private Date dataDiNascita;	
-	private Date dataDiRegistrazione;
 	private Indirizzo indirizzo;
 	private String password;
 	private Cliente cliente;
@@ -53,9 +52,6 @@ public class ControllerCliente {
 	public Date getDataDiNascita() {
 		return dataDiNascita;
 	}
-	public Date getDataDiRegistrazione() {
-		return dataDiRegistrazione;
-	}
 	public Indirizzo getIndirizzo() {
 		return indirizzo;
 	}
@@ -77,15 +73,14 @@ public class ControllerCliente {
 	public void setDataDiNascita(Date dataDiNascita) {
 		this.dataDiNascita = dataDiNascita;
 	}
-	public void setDataDiRegistrazione(Date dataDiRegistrazione) {
-		this.dataDiRegistrazione = dataDiRegistrazione;
-	}
 	public void setIndirizzo(Indirizzo indirizzo) {
 		this.indirizzo = indirizzo;
 	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+	public Cliente getCliente(){
+		return this.cliente;
+	}
 	
 }
