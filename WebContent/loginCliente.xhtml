@@ -18,16 +18,15 @@
 			<h:message for="email" styleClass="error" />
 		</div>
 		<div>
-
 			Hai già una password?
-			<h:selectOneRadio>
-				<f:selectItem itemValue="No" itemLabel="No, sono un nuovo cliente:" />
-				<f:selectItem itemValue="Si" itemLabel="Si, la mia password è:" />
-			</h:selectOneRadio>
 			<h:inputText value="#{controllerCliente.password}" required="true"
 				requiredMessage="Campo obbligatorio" id="password">
 			</h:inputText>
 			<h:message for="password" styleClass="error" />
+		</div>
+		<div>
+			Non sei ancora registrato? 
+			<h:link value="Registrati qui" outcome="registrazioneCliente"></h:link> 
 		</div>
 		<div>
 			<h:commandButton id="accedi" value="accedi"
