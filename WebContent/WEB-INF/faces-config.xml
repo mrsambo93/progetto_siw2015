@@ -19,4 +19,12 @@
 			<to-view-id>/faces/accessoEffettuatoCorrettamente.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/confermaRegistrazione.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{controllerCliente.creaCliente()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/loginCliente.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 </faces-config>
