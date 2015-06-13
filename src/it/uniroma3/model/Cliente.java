@@ -22,26 +22,33 @@ public class Cliente {
 	@Column(nullable=false)
 	private String email;
 
-	@Column(nullable = false)
+
 	@Temporal(TemporalType.DATE)
-	private Date dataDiNascita;
+	private GregorianCalendar dataDiNascita;
 
 	@Column(nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataDiRegistrazione;
 	
 	@Column(nullable=false)
+	@OneToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
 	private Indirizzo indirizzo;
 	
 	@Column(nullable=false)
 	private String password;
+	
+	@OneToMany(mappedBy="cliente", cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+	private List<Ordine> ordini;
 
-	public Cliente(String nome, String cognome,Indirizzo indirizzo, String email, String password){
+	public Cliente(String nome, String cognome,Indirizzo indirizzo, GregorianCalendar dataDiNascita, String email, String password){
 		this.nome = nome;
 		this.cognome = cognome;
 		this.indirizzo = indirizzo;
 		this.email = email;
 		this.password = password;
+		this.dataDiNascita= dataDiNascita;
+		this.dataDiRegistrazione = new Date();
+		this.ordini = new ArrayList<>();
 	}
 
 	public Long getId() {
@@ -80,11 +87,11 @@ public class Cliente {
 		this.email = email;
 	}
 
-	public Date getDataDiNascita() {
+	public GregorianCalendar getDataDiNascita() {
 		return dataDiNascita;
 	}
 
-	public void setDataDiNascita(Date dataDiNascita) {
+	public void setDataDiNascita(GregorianCalendar dataDiNascita) {
 		this.dataDiNascita = dataDiNascita;
 	}
 

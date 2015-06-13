@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
 
 @Entity
 @NamedQuery(name = "findAllIndirizzi", query = "SELECT i FROM Indirizzo i")
@@ -31,7 +30,13 @@ public class Indirizzo {
     @Column(nullable = false)
     private String stato;
 
-    public Indirizzo() {}
+    public Indirizzo(String via, String citta, String regione, String codicePostale, String stato) {
+    	this.via = via;
+    	this.citta = citta;
+    	this.regione = regione;
+    	this.codicePostale = codicePostale;
+    	this.stato = stato;
+    }
 
 	public Long getId() {
 		return id;
