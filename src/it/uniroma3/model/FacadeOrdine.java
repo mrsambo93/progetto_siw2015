@@ -11,7 +11,9 @@ public class FacadeOrdine {
 	
 	
 	public Ordine creaOrdine(Cliente cliente){
-		return new Ordine(cliente);
+		Ordine ordine = new Ordine(cliente);
+		this.em.persist(ordine);
+		return ordine;
 	}
 	
 	public Prodotto aggiungiProdottoAOrdine(Ordine ordine, Prodotto Prodotto, int qtaProdotto){
