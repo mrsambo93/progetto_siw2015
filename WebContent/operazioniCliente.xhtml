@@ -3,19 +3,18 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
 
-	<title>Operazioni amministratore</title>
+	<title>Operazioni cliente</title>
 	<meta charset="utf-8"></meta>
 	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 <link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
 </h:head>
 <h:body>
 	<div class="container-fluid">
-		<h1>Benvenuto amministratore!</h1>
+		<h1>Benvenuto Cliente!</h1>
 		<ul>
-			<li><h:link value="Aggiungi Prodotto" outcome="nuovoProdotto" /></li>
 			<li><h:form>
 				<h:commandLink action="#{controllerProdotto.listinoProdotti()}"
-					value="Listino Prodotti"/>
+					value="Crea Ordine"/>
 			</h:form></li>	
 		</ul>
 	</div>

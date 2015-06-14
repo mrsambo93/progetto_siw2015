@@ -27,4 +27,12 @@
 			<to-view-id>/faces/loginCliente.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+		<navigation-rule>
+		<from-view-id>/operazioniCliente.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{controllerProdotto.listinoProdotti()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/loginCliente.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 </faces-config>

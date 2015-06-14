@@ -44,7 +44,7 @@ public class ControllerProdotto {
 	
 	public String aggiungiQtaProdotto(String id) {
 		this.facadeProdotto.aggiungiQtaProdotto(Long.parseLong(id), qtaMagazzino);
-		return this.listinoProdotti();
+		return "success";
 	}
 
 	public Long getId() {
