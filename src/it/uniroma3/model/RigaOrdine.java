@@ -32,9 +32,14 @@ public class RigaOrdine {
     @OneToOne
     private Prodotto prodotto;
 
-    public RigaOrdine(Ordine ordine, Prodotto prodotto, Integer qtaOrdinata) {
-    	
+    public RigaOrdine(Prodotto prodotto, Ordine ordine, int qta){
+    	this.prodotto=prodotto;
+    	this.qtaOrdinata=qta;
+    	this.ordine=ordine;
+    	this.prezzoUnitario=prodotto.getPrezzo();
     }
+    
+    // Getters and Setters
     
 	public Long getId() {
 		return id;

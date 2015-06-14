@@ -31,7 +31,11 @@ public class Ordine {
 	public Ordine(Cliente cliente) {
 		this.dataApertura = new Date();
 		this.cliente = cliente;
-		this.righeOrdine = new ArrayList<>();
+		this.righeOrdine = new ArrayList<RigaOrdine>();
+	}
+	
+	public void aggiungiRigaOrdine(RigaOrdine rigaOrdine){
+		this.righeOrdine.add(rigaOrdine);
 	}
 
 	public Long getId() {
@@ -81,10 +85,5 @@ public class Ordine {
 	public void setRigheOrdini(List<RigaOrdine> righeOrdine) {
 		this.righeOrdine = righeOrdine;
 	}
-
-	public void aggiungiRigaOrdine(RigaOrdine rigaOrdine) {
-		this.righeOrdine.add(rigaOrdine);
-	}
-
 
 }

@@ -23,13 +23,16 @@ public class ControllerOrdine {
 	private List<RigaOrdine> righeOrdine;
 	private Ordine ordine;
 	private ControllerCliente controllerCliente;
+	private ControllerProdotto controllerProdotto;
+	private Integer qta;
 	
 	public String creaOrdine(){
 		this.ordine=this.facadeOrdine.creaOrdine(controllerCliente.getCliente());
 		return "success";
 	}
 
-	public aggiungiProdotto(String quantita){
-		this.facadeOrdine.aggiungiProdottoAOrdine(ordine, Prodotto, qtaProdotto);
+	public String aggiungiProdotto(){
+		this.facadeOrdine.aggiungiProdottoAOrdine(controllerProdotto.getProdotto(), ordine, qta);
+		return "listinoProdottiPerOrdine";
 	}
 }
