@@ -33,6 +33,10 @@ public class Ordine {
 		this.cliente = cliente;
 		this.righeOrdine= new ArrayList<RigaOrdine>();
 	}
+	
+	public void aggiungiRigaOrdine(RigaOrdine rigaOrdine){
+		this.righeOrdine.add(rigaOrdine);
+	}
 
 	public Long getId() {
 		return id;

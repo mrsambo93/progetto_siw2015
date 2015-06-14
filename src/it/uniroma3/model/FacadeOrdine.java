@@ -16,7 +16,8 @@ public class FacadeOrdine {
 		return ordine;
 	}
 	
-	public Prodotto aggiungiProdottoAOrdine(Ordine ordine, Prodotto Prodotto, int qtaProdotto){
-		
+	public void aggiungiProdottoAOrdine(Prodotto prodotto, Ordine ordine, Integer qtaProdotto){
+		RigaOrdine rigaOrdine = new RigaOrdine(prodotto,ordine,qtaProdotto);
+		ordine.aggiungiRigaOrdine(rigaOrdine);
 	}
 }	
