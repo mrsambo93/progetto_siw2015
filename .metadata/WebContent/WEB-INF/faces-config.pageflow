@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14341174473706" configfile="/progetto_siw2015/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="riepilogoProdotto.xhtml" x="122" y="178" id="pf14341174634907" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14341174634908" path="/riepilogoProdotto.xhtml"/>
@@ -13,3 +14,20 @@
   <links id="pf14342841812284" target="pf14342841812285" source="pf14342841812283" outcome="success" fromaction="#{controllerCliente.creaCliente()}"/>
   <links id="pf14342982587237" target="pf14342982587238" source="pf14342982587236" outcome="success" fromaction="#{controllerCliente.cercaProdotto(prod.id)}"/>
 </pageflow:Pageflow>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14341174473706" configfile="/progetto_siw2015/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="riepilogoProdotto.xhtml" x="122" y="178" id="pf14341174634907" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14341174634908" path="/riepilogoProdotto.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/prodottoInserito.xhtml" x="338" y="178" id="pf14341174634909" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14341174634908" path="/faces/prodottoInserito.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="loginCliente.xhtml" x="122" y="562" id="pf143411746349010" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf143411746349011" path="/loginCliente.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/acessoEffettuatoCorrettamente.xhtml" x="338" y="562" id="pf143411746349012" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf143411746349011" path="/faces/accessoEffettuatoCorrettamente.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registrazioneCliente.xhtml" id="pf14342841812283" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14342841812284" path="/registrazioneCliente.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/loginCliente.xhtml" id="pf14342841812285" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14342841812284" path="/faces/loginCliente.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="operazioniCliente.xhtml" id="pf14342963736287" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14342963736288" path="/operazioniCliente.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/listinoProdottiPerOrdine.xhtml" id="pf14342963736289" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14342963736288" path="/faces/listinoProdottiPerOrdine.xhtml"/>
+  <links id="pf14341174634908" target="pf14341174634909" source="pf14341174634907" outcome="success" fromaction="#{controllerProdotto.creaProdotto()}"/>
+  <links id="pf143411746349011" target="pf143411746349012" source="pf143411746349010" outcome="success" fromaction="#{controllerCliente.autenticaCliente()}"/>
+  <links id="pf14342841812284" target="pf14342841812285" source="pf14342841812283" outcome="success" fromaction="#{controllerCliente.creaCliente()}"/>
+  <links id="pf14342963736288" target="pf14342963736289" source="pf14342963736287" outcome="success" fromaction="#{controllerProdotto.listinoProdotti()}"/>
+</pageflow:Pageflow>
+>>>>>>> Stashed changes
