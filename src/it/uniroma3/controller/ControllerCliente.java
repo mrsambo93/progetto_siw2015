@@ -21,9 +21,9 @@ public class ControllerCliente {
 	private String nome;
 	private String cognome;
 	private String email;
-	private String giorno;
-	private String mese;
-	private String anno;
+	private Integer giorno;
+	private Integer mese;
+	private Integer anno;
 	private GregorianCalendar dataDiNascita;
 	private String via;
 	private String citta;
@@ -36,11 +36,11 @@ public class ControllerCliente {
 
 	public String creaCliente() {
 		this.indirizzo = this.creaIndirizzo(via, citta, regione, codicePostale, stato);
-		this.dataDiNascita = new GregorianCalendar(Integer.parseInt(anno),Integer.parseInt(giorno),Integer.parseInt(mese));
+		this.dataDiNascita = new GregorianCalendar(anno,mese-1,giorno);
 		this.cliente = this.facadeCliente.creaCliente(nome, cognome, indirizzo, dataDiNascita, email, password);
 		if(this.cliente==null)
 			return "failure";
-		return "loginCliente";
+		return "success";
 	}
 
 	public String autenticaCliente() {
@@ -155,27 +155,27 @@ public class ControllerCliente {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-	public String getGiorno() {
+	public Integer getGiorno() {
 		return giorno;
 	}
 
-	public void setGiorno(String giorno) {
+	public void setGiorno(Integer giorno) {
 		this.giorno = giorno;
 	}
 
-	public String getMese() {
+	public Integer getMese() {
 		return mese;
 	}
 
-	public void setMese(String mese) {
+	public void setMese(Integer mese) {
 		this.mese = mese;
 	}
 
-	public String getAnno() {
+	public Integer getAnno() {
 		return anno;
 	}
 
-	public void setAnno(String anno) {
+	public void setAnno(Integer anno) {
 		this.anno = anno;
 	}
 

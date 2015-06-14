@@ -17,9 +17,9 @@
 	<h:form>
 		<div>
 			Indirizzo e-mail:
-			<h:inputText value="#{controllerCliente.email}" required="true"
+			<h:inputSecret value="#{controllerCliente.email}" required="true"
 				requiredMessage="Campo obbligatorio" id="email">
-			</h:inputText>
+			</h:inputSecret>
 			<h:message for="email" styleClass="error" />
 		</div>
 		<div>
@@ -96,8 +96,10 @@
 			</h:inputText>
 			<h:message for="stato" styleClass="error" />
 		</div>
+		<div>
+			<h:commandButton value="invia" action="#{controllerCliente.creaCliente()}"></h:commandButton>
+		</div>
 	</h:form>
-	<h:button value="invia" outcome="confermaRegistrazione" />
 	<h:button value="torna indietro" outcome="loginCliente" />
 </h:body>
 </html>

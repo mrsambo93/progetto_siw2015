@@ -19,14 +19,14 @@
 		</div>
 		<div>
 			Hai già una password?
-			<h:inputText value="#{controllerCliente.password}" required="true"
+			<h:inputSecret value="#{controllerCliente.password}" required="true"
 				requiredMessage="Campo obbligatorio" id="password">
-			</h:inputText>
+			</h:inputSecret>
 			<h:message for="password" styleClass="error" />
 		</div>
 		<div>
 			Non sei ancora registrato? 
-			<h:link value="Registrati qui" outcome="registrazioneCliente"></h:link> 
+			<h:link value="Registrati qui." outcome="registrazioneCliente"></h:link> 
 		</div>
 		<div>
 			<h:commandButton id="accedi" value="accedi"

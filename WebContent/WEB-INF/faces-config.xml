@@ -20,7 +20,7 @@
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<from-view-id>/confermaRegistrazione.xhtml</from-view-id>
+		<from-view-id>/registrazioneCliente.xhtml</from-view-id>
 		<navigation-case>
 			<from-action>#{controllerCliente.creaCliente()}</from-action>
 			<from-outcome>success</from-outcome>
