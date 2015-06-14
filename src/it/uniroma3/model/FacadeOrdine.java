@@ -6,6 +6,7 @@ import javax.persistence.PersistenceContext;
 
 @Stateless(name = "facadeOrdine")
 public class FacadeOrdine {
+	
 	@PersistenceContext(unitName = "unit-progetto")
 	private EntityManager em;
 	

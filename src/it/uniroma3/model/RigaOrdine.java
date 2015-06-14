@@ -32,9 +32,9 @@ public class RigaOrdine {
     @OneToOne
     private Prodotto prodotto;
 
-    public RigaOrdine() {}
-    
-    // Getters and Setters
+    public RigaOrdine(Ordine ordine, Prodotto prodotto, Integer qtaOrdinata) {
+    	
+    }
     
 	public Long getId() {
 		return id;
