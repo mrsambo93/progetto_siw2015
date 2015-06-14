@@ -22,7 +22,6 @@ public class Cliente {
 	@Column(nullable=false)
 	private String email;
 
-
 	@Temporal(TemporalType.DATE)
 	private GregorianCalendar dataDiNascita;
 
@@ -109,6 +108,10 @@ public class Cliente {
 	
 	public void setPassword(String password){
 		this.password=password;
+	}
+	
+	public void aggiungiOrdine(Ordine ordine) {
+		this.ordini.add(ordine);
 	}
 	
 	public boolean verificaCredenziali(String password){

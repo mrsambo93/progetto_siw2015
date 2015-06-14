@@ -11,7 +11,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 @SessionScoped
-@ManagedBean(name = "controllerCliente")
+@ManagedBean(name = "controllerCliente", eager=true)
 public class ControllerCliente {
 
 	@EJB

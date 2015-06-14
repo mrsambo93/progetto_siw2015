@@ -10,12 +10,11 @@
 </h:head>
 <h:body>
 	<div class="container-fluid">
-		<h1>Benvenuto amministratore!</h1>
+		<h1>Benvenuto cliente!</h1>
 		<ul>
-			<li><h:link value="Aggiungi Prodotto" outcome="nuovoProdotto" /></li>
 			<li><h:form>
-				<h:commandLink action="#{controllerProdotto.listinoProdotti()}"
-					value="Listino Prodotti"/>
+				<h:commandLink action="#{controllerOrdine.creaOrdine()}"
+					value="Inizia un nuovo ordine"/>
 			</h:form></li>	
 		</ul>
 	</div>

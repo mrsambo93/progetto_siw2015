@@ -3,10 +3,13 @@
   <nodes xsi:type="pageflow:PFPage" name="riepilogoProdotto.xhtml" x="122" y="178" id="pf14341174634907" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14341174634908" path="/riepilogoProdotto.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="faces/prodottoInserito.xhtml" x="338" y="178" id="pf14341174634909" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14341174634908" path="/faces/prodottoInserito.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="loginCliente.xhtml" x="122" y="562" id="pf143411746349010" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf143411746349011" path="/loginCliente.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="faces/acessoEffettuatoCorrettamente.xhtml" x="338" y="562" id="pf143411746349012" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf143411746349011" path="/faces/accessoEffettuatoCorrettamente.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="registrazioneCliente.xhtml" id="pf14342841812283" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14342841812284" path="/registrazioneCliente.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="faces/loginCliente.xhtml" id="pf14342841812285" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14342841812284" path="/faces/loginCliente.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/acessoEffettuatoCorrettamente.xhtml" x="338" y="562" id="pf143411746349012" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf143411746349011" path="/faces/operazioniCliente.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registrazioneCliente.xhtml" x="122" y="946" id="pf14342841812283" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14342841812284" path="/registrazioneCliente.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/loginCliente.xhtml" x="338" y="946" id="pf14342841812285" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14342841812284" path="/faces/loginCliente.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="listinoProdotti.xhtml" x="122" y="1330" id="pf14342982587236" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14342982587237" path="/listinoProdotti.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/dettagliProdotto.xhtml" x="338" y="1330" id="pf14342982587238" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14342982587237" path="/faces/dettagliProdotto.xhtml"/>
   <links id="pf14341174634908" target="pf14341174634909" source="pf14341174634907" outcome="success" fromaction="#{controllerProdotto.creaProdotto()}"/>
   <links id="pf143411746349011" target="pf143411746349012" source="pf143411746349010" outcome="success" fromaction="#{controllerCliente.autenticaCliente()}"/>
   <links id="pf14342841812284" target="pf14342841812285" source="pf14342841812283" outcome="success" fromaction="#{controllerCliente.creaCliente()}"/>
+  <links id="pf14342982587237" target="pf14342982587238" source="pf14342982587236" outcome="success" fromaction="#{controllerCliente.cercaProdotto(prod.id)}"/>
 </pageflow:Pageflow>

@@ -42,6 +42,10 @@ public class Prodotto {
 		this.qtaMagazzino += qta;
 	}
 	
+	public void riduciQtaMagazzino(Integer qta) {
+		this.qtaMagazzino -= qta;
+	}
+	
 	public Long getId() {
 		return id;
 	}
