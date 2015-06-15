@@ -58,16 +58,16 @@ public class Ordine {
 		return dataChiusura;
 	}
 
-	public void setDataChiusura(Date dataChiusura) {
-		this.dataChiusura = dataChiusura;
+	public void setDataChiusura() {
+		this.dataChiusura = new Date();
 	}
 	
 	public Date getDataEvasione() {
 		return dataEvasione;
 	}
 
-	public void setDataEvasione(Date dataEvasione) {
-		this.dataEvasione = dataEvasione;
+	public void setDataEvasione() {
+		this.dataEvasione = new Date();
 	}
 
 	public Cliente getCliente() {

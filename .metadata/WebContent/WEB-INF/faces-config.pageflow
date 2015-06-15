@@ -47,6 +47,6 @@
   <links id="pf143430044042224" target="pf143430044042225" source="pf143430044042223" outcome="success"/>
   <links id="pf143430044042227" target="pf143430044042228" source="pf143430044042226" outcome="success"/>
   <links id="pf14343740940122" target="pf14343740940123" source="pf14343714085971" outcome="success"/>
-  <links id="pf143437416875510" target="pf143430044042225" source="pf143437416875511" outcome="success"/>
+  <links id="pf143437416875510" target="pf143430044042225" source="pf143437416875511" outcome="success" fromaction="#{controllerProdotto.listinoProdotti()}"/>
 </pageflow:Pageflow>
 >>>>>>> d04de31b8fec9751823e3b4df5b1f9d50d4b3367

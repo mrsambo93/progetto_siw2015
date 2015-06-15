@@ -24,7 +24,6 @@ public class ControllerOrdine {
 	private ControllerCliente controllerCliente;
 	@ManagedProperty(value="#{controllerProdotto}")
 	private ControllerProdotto controllerProdotto;
-	private Long id;
 	private Ordine ordine;
 	private Integer qta;
 	private List<RigaOrdine> righeOrdine;
@@ -45,12 +44,14 @@ public class ControllerOrdine {
 		return "success";
 	}
 	
-	public Long getId() {
-		return id;
+	public String annullaOrdine(){
+		this.facadeOrdine.annullati(ordine.getId());
+		return "success";
 	}
-
-	public void setId(Long id) {
-		this.id = id;
+	
+	public String terminaOrdine(){
+		this.facadeOrdine.tiConcludo(ordine.getId());
+		return "success";
 	}
 
 	public Ordine getOrdine() {
