@@ -15,6 +15,12 @@
 			<li><h:link value="Login Cliente" outcome="loginCliente" /></li>
 			<li><h:link value="Login Amministratore"
 					outcome="operazioniAdmin.xhtml" /></li>
+			<li>
+			<h:form>
+					<h:commandLink value="Consulta listino prodotti"
+						outcome="#{controllerProdotto.listinoProdotti()}" />
+				</h:form>
+				</li>
 		</ul>
 	</div>
 </h:body>
