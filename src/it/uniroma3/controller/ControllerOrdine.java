@@ -40,7 +40,7 @@ public class ControllerOrdine {
 	}
 
 	public String getCarrello(){
-		this.setRigheOrdine(this.facadeOrdine.getRigheOrdine(ordine.getId()));
+		this.righeOrdine = this.facadeOrdine.getRigheOrdine(ordine.getId());
 		return "success";
 	}
 	
