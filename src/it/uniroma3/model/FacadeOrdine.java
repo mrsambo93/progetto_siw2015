@@ -1,7 +1,6 @@
 package it.uniroma3.model;
 
 import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -10,8 +9,8 @@ import javax.persistence.PersistenceContext;
 public class FacadeOrdine {
 	@PersistenceContext(unitName = "unit-progetto")
 	private EntityManager em;
-	
-	
+
+
 	public Ordine creaOrdine(Cliente cliente){
 		Ordine ordine = new Ordine(cliente);
 		Cliente cl = this.em.find(Cliente.class, cliente.getEmail());
@@ -19,20 +18,25 @@ public class FacadeOrdine {
 		this.em.persist(ordine);
 		return ordine;
 	}
-	
+
 	public void aggiungiProdottoAOrdine(Prodotto prodotto, Ordine ordine, Integer qtaProdotto){
 		Ordine ord = this.em.find(Ordine.class, ordine.getId());
 		RigaOrdine rigaOrdine = new RigaOrdine(prodotto, ord, qtaProdotto);
 		ord.aggiungiRigaOrdine(rigaOrdine);
 	}
-	
+
 	public List<RigaOrdine> getRigheOrdine(Long idOrdine){
 		Ordine ord = this.em.find(Ordine.class, idOrdine);
 		return ord.getRigheOrdine();
 	}
-	
+
 	public void annullati(Long idOrdine){
 		Ordine ord = this.em.find(Ordine.class, idOrdine);
 		this.em.remove(ord);
+	}
+
+	public void tiConcludo(Long idOrdine) {
+		Ordine ord = this.em.find(Ordine.class, idOrdine);
+		ord.setDataChiusura();
 	}
 }	
