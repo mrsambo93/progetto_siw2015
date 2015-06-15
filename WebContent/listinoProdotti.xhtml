@@ -14,12 +14,11 @@
 	<h:dataTable value="#{controllerProdotto.catalogoProdotti}" var="prod"
 		styleClass="order-table" headerClass="order-table-header"
 		rowClasses="order-table-odd-row,order-table-even-row">
-
 		<h:column>
 			<f:facet name="header">Nome      </f:facet>
 			<h:form>
 				<h:commandLink value="#{prod.nome}"
-					action="#{controllerProdotto.cercaProdotto(prod.id)}" ></h:commandLink>
+					action="#{controllerProdotto.cercaProdotto(prod.id)}"></h:commandLink>
 			</h:form>
 		</h:column>
 		<h:column>
@@ -31,6 +30,6 @@
 				#{prod.qtaMagazzino}
     	</h:column>
 	</h:dataTable>
-	<h:button value="Torna indietro" outcome="index"></h:button>
+	<h:button value="Torna Indietro" outcome="index"></h:button>
 </h:body>
 </html>

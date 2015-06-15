@@ -8,16 +8,22 @@
 	<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
 </h:head>
 <h:body>
+	<h:graphicImage value="img.jpg" style="width: 204px; height: 91px;" />
 	<div class="container-fluid">
-		<h:graphicImage value="img.jpg" style="width: 204px; height: 91px;" />
+
 		<h1>Benvenuto in PingOfDeath Store!</h1>
 		<ul>
 			<li><h:link value="Login Cliente" outcome="loginCliente" /></li>
 			<li><h:link value="Login Amministratore"
 					outcome="operazioniAdmin.xhtml" /></li>
 			<li><h:form>
+<<<<<<< HEAD
 					<h:commandLink value="Consulta listino prodotti"
 						action="#{controllerProdotto.listinoProdotti()}" />
+=======
+					<h:commandLink action="#{controllerProdotto.listinoProdotti()}"
+						value="Consulta listino prodotti" />
+>>>>>>> f742b82b35364b365c7b6c32b4810b8a439df7a4
 				</h:form></li>
 		</ul>
 	</div>
