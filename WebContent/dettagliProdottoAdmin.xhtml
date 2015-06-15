@@ -9,14 +9,19 @@
 <h:body>
 	<h1>Dettagli prodotto</h1>
 	<ul>
-		<li>Nome: <h:outputText value="${controllerProdotto.prodotto.nome}"></h:outputText></li>
-		<li>Codice: <h:outputText value="${controllerProdotto.prodotto.codice}"></h:outputText></li>
+		<li>Nome: <h:outputText
+				value="${controllerProdotto.prodotto.nome}"></h:outputText></li>
+		<li>Codice: <h:outputText
+				value="${controllerProdotto.prodotto.codice}"></h:outputText></li>
 		<li>Descrizione: <h:outputText
 				value="${controllerProdotto.prodotto.descrizione}"></h:outputText></li>
-		<li>Prezzo: <h:outputText value="${controllerProdotto.prodotto.prezzo}"></h:outputText></li>
-		<li>Quantit&#224; disponibile: <h:outputText value="${controllerProdotto.prodotto.qtaMagazzino}"></h:outputText></li>
+		<li>Prezzo: <h:outputText
+				value="${controllerProdotto.prodotto.prezzo}"></h:outputText></li>
+		<li>Quantit&#224; disponibile: <h:outputText
+				value="${controllerProdotto.prodotto.qtaMagazzino}"></h:outputText></li>
 		<h:form>
-			<h:commandButton value="Incrementa quantit&#224;" action="incrementoQta"></h:commandButton>
+			<h:commandButton value="Incrementa quantit&#224;"
+				action="incrementoQta"></h:commandButton>
 		</h:form>
 	</ul>
 </h:body>

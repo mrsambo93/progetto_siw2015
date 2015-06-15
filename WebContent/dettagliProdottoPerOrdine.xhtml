@@ -19,15 +19,16 @@
 				value="${controllerProdotto.prodotto.prezzo}"></h:outputText></li>
 		<li>Quantit&#224; disponibile: <h:outputText
 				value="${controllerProdotto.prodotto.qtaMagazzino}"></h:outputText></li>
-		<h:form>
-			Quantit&#224; da ordinare: <h:inputText
-				value="#{controllerOrdine.qta}" required="true"
-				requiredMessage="Campo obbligatorio" id="qta">
-			</h:inputText>
-			<h:commandButton value="Ordina"
-				action="#{controllerOrdine.aggiungiProdotto()}"></h:commandButton>
-			<h:message for="qta" styleClass="error" /><br />
-		</h:form>
 	</ul>
+	<h:form>
+			Quantit&#224; da ordinare: <h:inputText
+			value="#{controllerOrdine.qta}" required="true"
+			requiredMessage="Campo obbligatorio" id="qta">
+		</h:inputText>
+		<h:commandButton value="Ordina"
+			action="#{controllerOrdine.aggiungiProdotto()}"></h:commandButton>
+		<h:message for="qta" styleClass="error" />
+		<br />
+	</h:form>
 </h:body>
 </html>

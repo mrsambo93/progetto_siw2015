@@ -4,6 +4,14 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
 	version="2.2">
 	<navigation-rule>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{controllerProdotto.listinoProdotti()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/listinoProdotti.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
 		<from-view-id>/riepilogoProdotto.xhtml</from-view-id>
 		<navigation-case>
 			<from-action>#{controllerProdotto.creaProdotto()}</from-action>
@@ -82,20 +90,6 @@
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<from-view-id>/index.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>success</from-outcome>
-			<to-view-id>/faces/listinoProdotti.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id>/index.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>success</from-outcome>
-			<to-view-id>/faces/listinoProdotti.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
 		<from-view-id>/listinoProdottiAdmin.xhtml</from-view-id>
 		<navigation-case>
 			<from-action>#{controllerCliente.cercaProdotto(prod.id)}</from-action>
@@ -114,6 +108,13 @@
 		<from-view-id>/operazioniAdmin.xhtml</from-view-id>
 		<navigation-case>
 			<from-action>#{controllerProdotto.listinoProdotti()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/listinoProdottiAdmin.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/incrementoQta.xhtml</from-view-id>
+		<navigation-case>
 			<from-outcome>success</from-outcome>
 			<to-view-id>/faces/listinoProdottiAdmin.xhtml</to-view-id>
 		</navigation-case>

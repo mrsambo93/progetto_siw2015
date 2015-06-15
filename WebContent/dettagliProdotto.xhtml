@@ -20,7 +20,9 @@
 		<li>Quantit&#224; disponibile: <h:outputText
 				value="${controllerProdotto.prodotto.qtaMagazzino}"></h:outputText></li>
 		<h:form>
-			<h:commandButton value="Torna al listino" action="#{controllerProdotto.listinoProdotti()}"></h:button>
+			<h:commandButton value="Torna al listino"
+				action="#{controllerProdotto.listinoProdotti()}">
+			</h:commandButton>
 		</h:form>
 	</ul>
 </h:body>
