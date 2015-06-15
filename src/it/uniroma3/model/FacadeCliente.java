@@ -28,4 +28,5 @@ public class FacadeCliente {
 	public Cliente cercaCliente(String email) {
 		return this.em.find(Cliente.class, email);
 	}
+	
 }
