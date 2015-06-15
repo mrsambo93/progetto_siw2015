@@ -10,7 +10,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 @SessionScoped
-@ManagedBean(name = "controllerProdotto", eager=true)
+@ManagedBean(name = "controllerProdotto")
 public class ControllerProdotto {
 	
 	@EJB
@@ -24,6 +24,8 @@ public class ControllerProdotto {
 	private Integer qtaMagazzino;
 	private Prodotto prodotto;
 	private List<Prodotto> catalogoProdotti;
+	
+	public ControllerProdotto() {}
 	
 	public String creaProdotto() {
 		this.prodotto = this.facadeProdotto.creaProdotto(nome, codice, descrizione, prezzo);
@@ -47,8 +49,8 @@ public class ControllerProdotto {
 		return "success";
 	}
 	
-	public String riduciQtaProdotto(String id) {
-		this.facadeProdotto.riduciQtaProdotto(Long.parseLong(id), qtaMagazzino);
+	public String riduciQtaProdotto() {
+		this.facadeProdotto.riduciQtaProdotto(prodotto.getId(), qtaMagazzino);
 		return this.listinoProdotti();
 	}
 

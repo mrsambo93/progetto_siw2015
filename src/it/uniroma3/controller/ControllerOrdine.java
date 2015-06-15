@@ -1,7 +1,11 @@
 package it.uniroma3.controller;
 
+import java.util.List;
+
 import it.uniroma3.model.FacadeOrdine;
 import it.uniroma3.model.Ordine;
+import it.uniroma3.model.Prodotto;
+import it.uniroma3.model.RigaOrdine;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -9,7 +13,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 @SessionScoped
-@ManagedBean(name = "controllerOrdine", eager=true)
+@ManagedBean(name = "controllerOrdine")
 public class ControllerOrdine {
 
 	@EJB
@@ -22,15 +26,22 @@ public class ControllerOrdine {
 	private Long id;
 	private Ordine ordine;
 	private Integer qta;
+	private List<RigaOrdine> righeOrdine;
 	
 	public String creaOrdine() {
 		this.ordine=this.facadeOrdine.creaOrdine(controllerCliente.getCliente());
 		return controllerProdotto.listinoProdotti();
 	}
 
-	public String aggiungiProdotto(String idProdotto){
-		this.facadeOrdine.aggiungiProdottoAOrdine(controllerProdotto.getProdotto(), ordine, qta);
-		return controllerProdotto.riduciQtaProdotto(idProdotto);
+	public String aggiungiProdotto(){
+		Prodotto prodotto = controllerProdotto.getProdotto();
+		this.facadeOrdine.aggiungiProdottoAOrdine(prodotto, ordine, qta);
+		return this.getCarrello(ordine.getId());
+	}
+	
+	public String getCarrello(Long idOrdine) {
+		this.righeOrdine = this.facadeOrdine.getRigheOrdine(idOrdine);
+		return "carrello";
 	}
 
 	public Long getId() {
@@ -71,6 +82,14 @@ public class ControllerOrdine {
 
 	public void setControllerProdotto(ControllerProdotto controllerProdotto) {
 		this.controllerProdotto = controllerProdotto;
+	}
+
+	public List<RigaOrdine> getRigheOrdine() {
+		return righeOrdine;
+	}
+
+	public void setRigheOrdine(List<RigaOrdine> righeOrdine) {
+		this.righeOrdine = righeOrdine;
 	}
 	
 }

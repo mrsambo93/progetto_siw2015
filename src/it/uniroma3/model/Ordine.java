@@ -78,11 +78,11 @@ public class Ordine {
 		this.cliente = cliente;
 	}
 
-	public List<RigaOrdine> getRigaOrdine() {
+	public List<RigaOrdine> getRigheOrdine() {
 		return righeOrdine;
 	}
 
-	public void setRigheOrdini(List<RigaOrdine> righeOrdine) {
+	public void setRigheOrdine(List<RigaOrdine> righeOrdine) {
 		this.righeOrdine = righeOrdine;
 	}
 

@@ -11,7 +11,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 @SessionScoped
-@ManagedBean(name = "controllerCliente", eager=true)
+@ManagedBean(name = "controllerCliente")
 public class ControllerCliente {
 
 	@EJB
@@ -34,6 +34,8 @@ public class ControllerCliente {
 	private String password;
 	private Cliente cliente;
 
+	public ControllerCliente() {}
+	
 	public String creaCliente() {
 		this.indirizzo = this.creaIndirizzo(via, citta, regione, codicePostale, stato);
 		this.dataDiNascita = new GregorianCalendar(anno,mese-1,giorno);
@@ -44,8 +46,10 @@ public class ControllerCliente {
 	}
 
 	public String autenticaCliente() {
-		if(this.facadeCliente.autenticaAutente(email, password))
+		if(this.facadeCliente.autenticaAutente(email, password)) {
+			this.cliente = this.facadeCliente.cercaCliente(email);
 			return "success";
+		}
 		return "failure";
 	}
 
