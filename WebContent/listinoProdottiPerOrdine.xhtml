@@ -31,9 +31,6 @@
 				#{prod.qtaMagazzino}
     	</h:column>
 		<h:form>
-			<h:inputText value="#{controllerCliente.email}" required="true"
-				requiredMessage="Campo obbligatorio" id="email">
-			</h:inputText>
 			<h:commandLink value="Aggiungi al carrello"
 				action="#{controllerProdotto.cercaProdotto(prod.id)}"></h:commandLink>
 		</h:form>
