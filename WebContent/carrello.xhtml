@@ -18,19 +18,19 @@
 
 		<h:column>
 			<f:facet name="header">Nome      </f:facet>
-				#{riga.prodotto.getNome()}
+				#{riga.prodotto.nome}
 		</h:column>
 		<h:column>
 			<f:facet name="header">Codice      </f:facet>
-				#{riga.prodotto.getCodice()}
+				#{riga.prodotto.codice}
     	</h:column>
 		<h:column>
 			<f:facet name="header">Prezzo      </f:facet>
-				#{riga.prodotto.getPrezzoUnitario()}
+				#{riga.prezzoUnitario}
     	</h:column>
 		<h:column>
 			<f:facet name="header">Quantit&#224; Ordinata      </f:facet>
-				#{riga.getQtaOrdinata()}
+				#{riga.qtaOrdinata}
     	</h:column>
 		<h:form>
 			<h:commandLink value="Aggiungi un altro prodotto al carrello"

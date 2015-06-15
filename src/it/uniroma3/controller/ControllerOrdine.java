@@ -37,11 +37,11 @@ public class ControllerOrdine {
 	public String aggiungiProdotto(){
 		Prodotto p = this.controllerProdotto.getProdotto();
 		this.facadeOrdine.aggiungiProdottoAOrdine(p, ordine, qta);
-		return this.getCarrello(ordine.getId());
+		return this.getCarrello();
 	}
 
-	public String getCarrello(Long idOrdine){
-		this.setRigheOrdine(this.facadeOrdine.getRigheOrdine(idOrdine));
+	public String getCarrello(){
+		this.setRigheOrdine(this.facadeOrdine.getRigheOrdine(ordine.id));
 		return "success";
 	}
 	
