@@ -8,12 +8,10 @@
 	<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
 </h:head>
 <h:body>
-
-	<h1>Carrello Prodotti</h1>
-
-	<h:dataTable
-		value="#{controllerOrdine.righeOrdine}"
-		var="riga" styleClass="order-table" headerClass="order-table-header"
+	
+	<h1>Il tuo Carrello Prodotto </h1>
+	<h:dataTable value="#{controllerOrdine.righeOrdine}" var="riga"
+		styleClass="order-table" headerClass="order-table-header"
 		rowClasses="order-table-odd-row,order-table-even-row">
 
 		<h:column>
@@ -32,10 +30,12 @@
 			<f:facet name="header">Quantit&#224; Ordinata      </f:facet>
 				#{riga.qtaOrdinata}
     	</h:column>
-		<h:form>
-			<h:commandLink value="Aggiungi un altro prodotto al carrello"
-				action="#{controllerProdotto.listinoProdotti()}"></h:commandLink>
-		</h:form>
 	</h:dataTable>
+	<div>
+		<h:form>
+			<h:commandButton value="Aggiungi un altro prodotto al carrello"
+				action="#{controllerProdotto.listinoProdotti()}"></h:commandButton>
+		</h:form>
+	</div>
 </h:body>
 </html>
