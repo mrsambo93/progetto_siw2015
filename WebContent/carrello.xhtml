@@ -2,36 +2,40 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
 
-	<title>Carrello</title>
+	<title>Carrello Prodotti</title>
 	<meta charset="utf-8"></meta>
 	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 	<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
 </h:head>
 <h:body>
 
-	<h1>Il tuo carrello</h1>
+	<h1>Carrello Prodotti</h1>
 
-	<h:dataTable value="#{controllerOrdine.righeOrdine}" var="riga"
-		styleClass="order-table" headerClass="order-table-header"
+	<h:dataTable
+		value="#{controllerOrdine.righeOrdine}"
+		var="riga" styleClass="order-table" headerClass="order-table-header"
 		rowClasses="order-table-odd-row,order-table-even-row">
 
 		<h:column>
 			<f:facet name="header">Nome      </f:facet>
-				#{riga.prodotto.nome}
+				#{riga.prodotto.getNome()}
 		</h:column>
 		<h:column>
-			<f:facet name="header">Prezzo unitario      </f:facet>
-				#{riga.prezzoUnitario}
+			<f:facet name="header">Codice      </f:facet>
+				#{riga.prodotto.getCodice()}
     	</h:column>
 		<h:column>
-			<f:facet name="header">Quantit&#224;      </f:facet>
-				#{riga.qtaOrdinata}
+			<f:facet name="header">Prezzo      </f:facet>
+				#{riga.prodotto.getPrezzoUnitario()}
+    	</h:column>
+		<h:column>
+			<f:facet name="header">Quantit&#224; Ordinata      </f:facet>
+				#{riga.getQtaOrdinata()}
     	</h:column>
 		<h:form>
-			<h:commandButton value="Aggiungi un altro prodotto"
-				action="#{controllerProdotto.listinoProdotti()}"></h:commandButton>
+			<h:commandLink value="Aggiungi un altro prodotto al carrello"
+				action="#{controllerProdotto.listinoProdotti()}"></h:commandLink>
 		</h:form>
 	</h:dataTable>
-
 </h:body>
 </html>

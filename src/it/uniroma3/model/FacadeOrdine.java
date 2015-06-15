@@ -26,8 +26,9 @@ public class FacadeOrdine {
 		ord.aggiungiRigaOrdine(rigaOrdine);
 	}
 	
-	public List<RigaOrdine> getRigheOrdine(Long idOrdine) {
-		return this.em.find(Ordine.class, idOrdine).getRigheOrdine();
+	public List<RigaOrdine> getRigheOrdine(Long idOrdine){
+		Ordine ord = this.em.find(Ordine.class, idOrdine);
+		return ord.getRigheOrdine();
 	}
 	
 }	

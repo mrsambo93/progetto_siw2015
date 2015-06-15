@@ -3,29 +3,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
 	version="2.2">
-	<managed-bean>
-		<managed-bean-name>controllerOrdine</managed-bean-name>
-		<managed-bean-class>it.uniroma3.controller.ControllerOrdine</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
-		<managed-property>
-			<property-name>controllerProdotto</property-name>
-			<value>#{controllerProdotto}</value>
-		</managed-property>
-		<managed-property>
-			<property-name>controllerCliente</property-name>
-			<value>#{controllerCliente}</value>
-		</managed-property>
-	</managed-bean>
-	<managed-bean>
-		<managed-bean-name>controllerCliente</managed-bean-name>
-		<managed-bean-class>it.uniroma3.controller.ControllerCliente</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
-	</managed-bean>
-	<managed-bean>
-		<managed-bean-name>controllerProdotto</managed-bean-name>
-		<managed-bean-class>it.uniroma3.controller.ControllerProdotto</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
-	</managed-bean>
 	<navigation-rule>
 		<from-view-id>/riepilogoProdotto.xhtml</from-view-id>
 		<navigation-case>
@@ -61,6 +38,7 @@
 	<navigation-rule>
 		<from-view-id>/operazioniCliente.xhtml</from-view-id>
 		<navigation-case>
+			
 			<from-outcome>success</from-outcome>
 			<to-view-id>/faces/listinoProdottiPerOrdine.xhtml</to-view-id>
 		</navigation-case>
@@ -73,10 +51,11 @@
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<from-view-id>/carrello.xhtml</from-view-id>
+		<from-view-id>/dettagliProdottoPerOrdine.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>success</from-outcome>
-			<to-view-id>/faces/listinoProdottiPerOrdine.xhtml</to-view-id>
+			<to-view-id>/faces/carrello.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	
 </faces-config>

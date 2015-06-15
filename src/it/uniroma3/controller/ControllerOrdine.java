@@ -4,6 +4,7 @@ import java.util.List;
 
 import it.uniroma3.model.FacadeOrdine;
 import it.uniroma3.model.Ordine;
+
 import it.uniroma3.model.Prodotto;
 import it.uniroma3.model.RigaOrdine;
 
@@ -34,16 +35,16 @@ public class ControllerOrdine {
 	}
 
 	public String aggiungiProdotto(){
-		Prodotto prodotto = controllerProdotto.getProdotto();
-		this.facadeOrdine.aggiungiProdottoAOrdine(prodotto, ordine, qta);
+		Prodotto p = this.controllerProdotto.getProdotto();
+		this.facadeOrdine.aggiungiProdottoAOrdine(p, ordine, qta);
 		return this.getCarrello(ordine.getId());
 	}
-	
-	public String getCarrello(Long idOrdine) {
-		this.righeOrdine = this.facadeOrdine.getRigheOrdine(idOrdine);
-		return "carrello";
-	}
 
+	public String getCarrello(Long idOrdine){
+		this.setRigheOrdine(this.facadeOrdine.getRigheOrdine(idOrdine));
+		return "success";
+	}
+	
 	public Long getId() {
 		return id;
 	}
