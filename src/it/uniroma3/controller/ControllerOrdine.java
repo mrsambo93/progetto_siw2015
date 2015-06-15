@@ -44,6 +44,11 @@ public class ControllerOrdine {
 		return "success";
 	}
 	
+	public String annullaOrdine(){
+		this.facadeOrdine.annullati(ordine.getId());
+		return "success";
+	}
+	
 	public Long getId() {
 		return id;
 	}

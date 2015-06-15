@@ -30,4 +30,9 @@ public class FacadeOrdine {
 		Ordine ord = this.em.find(Ordine.class, idOrdine);
 		return ord.getRigheOrdine();
 	}
+	
+	public void annullati(Long idOrdine){
+		Ordine ord = this.em.find(Ordine.class, idOrdine);
+		this.em.remove(ord);
+	}
 }	
