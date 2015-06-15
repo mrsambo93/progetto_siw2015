@@ -28,17 +28,8 @@
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<from-view-id>/listinoProdotti.xhtml</from-view-id>
-		<navigation-case>
-			<from-action>#{controllerCliente.cercaProdotto(prod.id)}</from-action>
-			<from-outcome>success</from-outcome>
-			<to-view-id>/faces/dettagliProdotto.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
 		<from-view-id>/operazioniCliente.xhtml</from-view-id>
 		<navigation-case>
-
 			<from-outcome>success</from-outcome>
 			<to-view-id>/faces/listinoProdottiPerOrdine.xhtml</to-view-id>
 		</navigation-case>
@@ -48,6 +39,21 @@
 		<navigation-case>
 			<from-outcome>success</from-outcome>
 			<to-view-id>/faces/dettagliProdottoPerOrdine.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/listinoProdotti.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{controllerProdotto.cercaProdotto(prod.id)}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/dettagliProdotto.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/listinoProdottiAdmin.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/dettagliProdottoAdmin.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
@@ -84,9 +90,17 @@
 	<navigation-rule>
 		<from-view-id>/index.xhtml</from-view-id>
 		<navigation-case>
-	
+			<from-action>#{controllerProdotto.listinoProdotti()}</from-action>
 			<from-outcome>success</from-outcome>
 			<to-view-id>/faces/listinoProdotti.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/operazioniAdmin.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{controllerProdotto.listinoProdotti()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/listinoProdottiAdmin.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 </faces-config>

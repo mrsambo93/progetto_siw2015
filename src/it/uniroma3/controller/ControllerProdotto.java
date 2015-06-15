@@ -10,7 +10,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 @SessionScoped
-@ManagedBean(name = "controllerProdotto")
+@ManagedBean(name = "controllerProdotto", eager=true)
 public class ControllerProdotto {
 	
 	@EJB

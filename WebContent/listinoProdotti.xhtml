@@ -5,7 +5,7 @@
 	<title>Listino Prodotti</title>
 	<meta charset="utf-8"></meta>
 	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
+	<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
 </h:head>
 <h:body>
 
@@ -18,17 +18,19 @@
 		<h:column>
 			<f:facet name="header">Nome      </f:facet>
 			<h:form>
-				<h:commandLink value="#{prod.nome}" action="#{controllerProdotto.cercaProdotto(prod.id)}"></h:commandLink>
+				<h:commandLink value="#{prod.nome}"
+					action="#{controllerProdotto.cercaProdotto(prod.id)}" ></h:commandLink>
 			</h:form>
-    	</h:column>
-    	<h:column>
+		</h:column>
+		<h:column>
 			<f:facet name="header">Prezzo      </f:facet>
 				#{prod.prezzo}
     	</h:column>
-    	<h:column>
+		<h:column>
 			<f:facet name="header">Quantit&#224; Disponbile      </f:facet>
 				#{prod.qtaMagazzino}
     	</h:column>
 	</h:dataTable>
+	<h:button value="Torna indietro" outcome="index"></h:button>
 </h:body>
 </html>
