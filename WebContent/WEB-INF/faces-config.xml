@@ -90,10 +90,18 @@
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<from-view-id>/listinoProdotti.xhtml</from-view-id>
+		<from-view-id>/listinoProdottiAdmin.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{controllerCliente.cercaProdotto(prod.id)}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/dettagliProdottoAdmin.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/dettagliProdotto.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>success</from-outcome>
-			<to-view-id>/faces/dettagliProdotto.xhtml</to-view-id>
+			<to-view-id>/faces/listinoProdotti.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 </faces-config>
