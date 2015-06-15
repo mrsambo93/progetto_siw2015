@@ -44,8 +44,10 @@ public class ControllerCliente {
 	}
 
 	public String autenticaCliente() {
-		if(this.facadeCliente.autenticaAutente(email, password))
+		if(this.facadeCliente.autenticaAutente(email, password)){
+			this.cliente=this.facadeCliente.cercaCliente(email);
 			return "success";
+		}
 		return "failure";
 	}
 

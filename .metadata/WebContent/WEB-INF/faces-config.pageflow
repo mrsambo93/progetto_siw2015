@@ -16,6 +16,6 @@
   <links id="pf143430044042215" target="pf143430044042216" source="pf143430044042214" outcome="success" fromaction="#{controllerCliente.autenticaCliente()}"/>
   <links id="pf143430044042218" target="pf143430044042219" source="pf143430044042217" outcome="success" fromaction="#{controllerCliente.creaCliente()}"/>
   <links id="pf143430044042221" target="pf143430044042222" source="pf143430044042220" outcome="success" fromaction="#{controllerCliente.cercaProdotto(prod.id)}"/>
-  <links id="pf143430044042224" target="pf143430044042225" source="pf143430044042223" outcome="success" fromaction="#{controllerCliente.creaOrdine()}"/>
-  <links id="pf143430044042227" target="pf143430044042228" source="pf143430044042226" outcome="success" fromaction="#{controllerCliente.cercaProdotto(prod.id)}"/>
+  <links id="pf143430044042224" target="pf143430044042225" source="pf143430044042223" outcome="success"/>
+  <links id="pf143430044042227" target="pf143430044042228" source="pf143430044042226" outcome="success"/>
 </pageflow:Pageflow>

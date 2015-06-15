@@ -24,4 +24,8 @@ public class FacadeCliente {
 		Cliente cliente =  this.em.find(Cliente.class, email);
 		return cliente.verificaCredenziali(password);
 	}
+	
+	public Cliente cercaCliente(String email){
+		return this.em.find(Cliente.class, email);
+	}
 }

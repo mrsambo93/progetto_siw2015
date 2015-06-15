@@ -2,6 +2,7 @@ package it.uniroma3.controller;
 
 import it.uniroma3.model.FacadeOrdine;
 import it.uniroma3.model.Ordine;
+import it.uniroma3.model.Prodotto;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -28,9 +29,10 @@ public class ControllerOrdine {
 		return controllerProdotto.listinoProdotti();
 	}
 
-	public String aggiungiProdotto(String idProdotto){
-		this.facadeOrdine.aggiungiProdottoAOrdine(controllerProdotto.getProdotto(), ordine, qta);
-		return controllerProdotto.riduciQtaProdotto(idProdotto);
+	public String aggiungiProdotto(){
+		Prodotto p = this.controllerProdotto.getProdotto();
+		this.facadeOrdine.aggiungiProdottoAOrdine(p, ordine, qta);
+		return controllerProdotto.riduciQtaProdotto();
 	}
 
 	public Long getId() {

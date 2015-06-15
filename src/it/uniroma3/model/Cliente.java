@@ -47,7 +47,7 @@ public class Cliente {
 		this.password = password;
 		this.dataDiNascita= dataDiNascita;
 		this.dataDiRegistrazione = new Date();
-		this.ordini = new ArrayList<>();
+		this.ordini = new ArrayList<Ordine>();
 	}
 
 	public Long getId() {

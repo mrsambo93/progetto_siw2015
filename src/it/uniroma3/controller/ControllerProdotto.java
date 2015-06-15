@@ -47,8 +47,8 @@ public class ControllerProdotto {
 		return "success";
 	}
 	
-	public String riduciQtaProdotto(String id) {
-		this.facadeProdotto.riduciQtaProdotto(Long.parseLong(id), qtaMagazzino);
+	public String riduciQtaProdotto() {
+		this.facadeProdotto.riduciQtaProdotto(prodotto.getId(), qtaMagazzino);
 		return this.listinoProdotti();
 	}
 

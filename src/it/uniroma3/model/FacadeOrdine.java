@@ -12,13 +12,14 @@ public class FacadeOrdine {
 	
 	public Ordine creaOrdine(Cliente cliente){
 		Ordine ordine = new Ordine(cliente);
-		cliente.aggiungiOrdine(ordine);
+		Cliente cl = this.em.find(Cliente.class, cliente.getEmail());
+		cl.aggiungiOrdine(ordine);
 		this.em.persist(ordine);
 		return ordine;
 	}
 	
 	public void aggiungiProdottoAOrdine(Prodotto prodotto, Ordine ordine, Integer qtaProdotto){
-		RigaOrdine rigaOrdine = new RigaOrdine(prodotto,ordine,qtaProdotto);
+		RigaOrdine rigaOrdine = new RigaOrdine(prodotto, ordine, qtaProdotto);
 		ordine.aggiungiRigaOrdine(rigaOrdine);
 	}
 }	
