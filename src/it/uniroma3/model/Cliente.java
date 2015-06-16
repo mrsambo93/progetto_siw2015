@@ -114,8 +114,21 @@ public class Cliente {
 		this.ordini.add(ordine);
 	}
 	
+	public void rimuoviOrdine(Ordine ordine) {
+		this.ordini.remove(ordine);
+	}
+	
 	public boolean verificaCredenziali(String password){
 		return this.password.equals(password);
 	}
+
+	public List<Ordine> getOrdini() {
+		return ordini;
+	}
+
+	public void setOrdini(List<Ordine> ordini) {
+		this.ordini = ordini;
+	}
+	
 }
 

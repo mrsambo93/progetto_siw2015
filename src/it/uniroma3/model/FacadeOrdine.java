@@ -1,9 +1,11 @@
 package it.uniroma3.model;
 
 import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 @Stateless(name = "facadeOrdine")
 public class FacadeOrdine {
@@ -24,10 +26,35 @@ public class FacadeOrdine {
 		RigaOrdine rigaOrdine = new RigaOrdine(prodotto,ord,qtaProdotto);
 		ord.aggiungiRigaOrdine(rigaOrdine);
 	}
+	
+	public List<Ordine> listinoOrdini() {
+		TypedQuery<Ordine> query = this.em.createNamedQuery("listinoOrdini", Ordine.class);
+		return query.getResultList();
+	}
+	
+	public List<Ordine> listinoOrdiniCliente(String email){
+		this.pulisciOrdini();
+		return this.em.find(Cliente.class, email).getOrdini();
+	}
+	
+	private void pulisciOrdini() {
+		TypedQuery<Ordine> query = this.em.createNamedQuery("listinoOrdini", Ordine.class);
+		for(Ordine ord : query.getResultList()) {
+			if(ord.getDataChiusura() == null) {
+				Cliente c = ord.getCliente();
+				c.rimuoviOrdine(ord);
+				this.em.remove(ord);
+			}
+		}
+	}
 
 	public List<RigaOrdine> getRigheOrdine(Long idOrdine){
 		Ordine ord = this.em.find(Ordine.class, idOrdine);
 		return ord.getRigheOrdine();
+	}
+	
+	public Ordine cercaOrdine(Long id) {
+		return this.em.find(Ordine.class, id);
 	}
 
 	public void annullati(Long idOrdine){

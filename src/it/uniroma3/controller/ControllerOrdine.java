@@ -2,9 +2,9 @@ package it.uniroma3.controller;
 
 import java.util.List;
 
+import it.uniroma3.model.Cliente;
 import it.uniroma3.model.FacadeOrdine;
 import it.uniroma3.model.Ordine;
-
 import it.uniroma3.model.Prodotto;
 import it.uniroma3.model.RigaOrdine;
 
@@ -26,17 +26,41 @@ public class ControllerOrdine {
 	private ControllerProdotto controllerProdotto;
 	private Ordine ordine;
 	private Integer qta;
+	private Cliente cliente;
 	private List<RigaOrdine> righeOrdine;
+	private List<Ordine> ordini;
 	
 	public String creaOrdine() {
 		this.ordine=this.facadeOrdine.creaOrdine(controllerCliente.getCliente());
 		return controllerProdotto.listinoProdotti();
+	}
+	
+	public String cercaOrdine(String id) {
+		this.ordine = this.facadeOrdine.cercaOrdine(Long.parseLong(id));
+		return this.getCarrello();
+	}
+	
+	public String cercaClienteDaOrdine(String id) {
+		this.ordine = this.facadeOrdine.cercaOrdine(Long.parseLong(id));
+		this.cliente = this.ordine.getCliente();
+		return "success";
 	}
 
 	public String aggiungiProdotto(){
 		Prodotto p = this.controllerProdotto.getProdotto();
 		this.facadeOrdine.aggiungiProdottoAOrdine(p, ordine, qta);
 		return this.getCarrello();
+	}
+	
+	public String listinoOrdini() {
+		this.ordini = this.facadeOrdine.listinoOrdini();
+		return "success";
+	}
+	
+	public String listinoOrdiniCliente() {
+		this.cliente = this.controllerCliente.getCliente();
+		this.ordini = this.facadeOrdine.listinoOrdiniCliente(this.cliente.getEmail());
+		return "success";
 	}
 
 	public String getCarrello(){
@@ -92,6 +116,22 @@ public class ControllerOrdine {
 
 	public void setRigheOrdine(List<RigaOrdine> righeOrdine) {
 		this.righeOrdine = righeOrdine;
+	}
+
+	public List<Ordine> getOrdini() {
+		return ordini;
+	}
+
+	public void setOrdini(List<Ordine> ordiniCliente) {
+		this.ordini = ordiniCliente;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 	
 }

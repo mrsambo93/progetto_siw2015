@@ -9,7 +9,7 @@
 </h:head>
 <h:body>
 
-	<h1>Il tuo Carrello</h1>
+	<h1>Dettagli ordine</h1>
 	<h:dataTable value="#{controllerOrdine.righeOrdine}" var="riga"
 		styleClass="order-table" headerClass="order-table-header"
 		rowClasses="order-table-odd-row,order-table-even-row">
@@ -26,20 +26,20 @@
 			<f:facet name="header">Prezzo      </f:facet>
 				#{riga.prezzoUnitario}
     	</h:column>
+    	<h:column>
+    		<f:facet name="header">Quantit&#224; disponibile</f:facet>
+    			#{riga.prodotto.qtaMagazzino}
+    	</h:column>
 		<h:column>
-			<f:facet name="header">Quantit&#224; Ordinata      </f:facet>
+			<f:facet name="header">Quantit&#224; ordinata      </f:facet>
 				#{riga.qtaOrdinata}
     	</h:column>
 	</h:dataTable>
-	<div>
-		<h:form>
-			<h:commandButton value="Aggiungi un altro prodotto al carrello"
-				action="#{controllerProdotto.listinoProdotti()}"></h:commandButton>
-			<h:commandButton value="Termina Ordine"
-				action="#{controllerOrdine.terminaOrdine()}"></h:commandButton>
-			<h:commandButton value="Annulla Ordine"
-				action="#{controllerOrdine.annullaOrdine()}"></h:commandButton>
-		</h:form>
-	</div>
+	<h:form>
+		<div>
+			<h:commandButton value="Visualizza informazioni cliene" action="#{controllerOrdine.cercaClienteDaOrdine(riga.ordine.id)}"></h:commandButton>
+		</div>
+		<h:commandButton value="Evadi ordine" action="#{controllerOrdine.evadiOrdine()}"></h:commandButton>
+	</h:form>
 </h:body>
 </html>

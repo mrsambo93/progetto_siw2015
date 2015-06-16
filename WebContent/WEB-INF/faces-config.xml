@@ -38,8 +38,33 @@
 	<navigation-rule>
 		<from-view-id>/operazioniCliente.xhtml</from-view-id>
 		<navigation-case>
+			<from-action>#{controllerOrdine.creaOrdine()}</from-action>
 			<from-outcome>success</from-outcome>
 			<to-view-id>/faces/listinoProdottiPerOrdine.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/operazioniCliente.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{controllerOrdine.listinoOrdiniCliente()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/listinoOrdiniCliente.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/listinoOrdiniCliente.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{controllerOrdine.cercaOrdine(ord.id)}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/dettagliOrdineCliente.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/dettagliOrdineCliente.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{controllerOrdine.listinoOrdiniCliente()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/listinoOrdiniCliente.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
