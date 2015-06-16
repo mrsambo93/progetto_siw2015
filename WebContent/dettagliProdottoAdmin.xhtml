@@ -1,5 +1,6 @@
 <html lang="en" xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 
 	<title>Prodotto</title>
@@ -22,6 +23,11 @@
 		<h:form>
 			<h:commandButton value="Incrementa quantit&#224;"
 				action="incrementoQta"></h:commandButton>
+			<div></div>
+			<h:commandButton value="Visualizza i fornitori"
+				action="#{controllerFornitore.listinoFornitoriProdotto()}"></h:commandButton>
+			<div></div>
+			<h:button value="Torna al listino" outcome="listinoProdottiAdmin"></h:button>
 		</h:form>
 	</ul>
 </h:body>

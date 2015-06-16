@@ -156,5 +156,12 @@
 			<to-view-id>/faces/dettagliOrdine.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/listinoFornitori.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/dettagliProdottoAdmin.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 </faces-config>
 

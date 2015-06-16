@@ -1,0 +1,78 @@
+<html lang="en" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+
+	<title>Registrazione Fornitore</title>
+	<meta charset="utf-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
+</h:head>
+<h:body>
+	<h1>Nuovo fornitore</h1>
+	<h:form>
+		<div>
+			Partita iva:
+			<h:inputText value="#{controllerFornitore.partitaIva}" required="true"
+				requiredMessage="Campo obbligatorio" id="partitaIva">
+			</h:inputText>
+			<h:message for="partitaIva" styleClass="error" />
+		</div>
+		<div>
+			Indirizzo e-mail:
+			<h:inputText value="#{controllerFornitore.email}" required="true"
+				requiredMessage="Campo obbligatorio" id="email">
+			</h:inputText>
+			<h:message for="email" styleClass="error" />
+		</div>
+		<div>
+			Indirizzo di residenza:
+			<h:inputText value="#{controllerFornitore.via}" required="true"
+				requiredMessage="Campo obbligatorio" id="via">
+			</h:inputText>
+			<h:message for="via" styleClass="error" />
+		</div>
+		<div>
+			Citt&#224;:
+			<h:inputText value="#{controllerFornitore.citta}" required="true"
+				requiredMessage="Campo obbligatorio" id="citta">
+			</h:inputText>
+			<h:message for="citta" styleClass="error" />
+		</div>
+		<div>
+			Regione:
+			<h:inputText value="#{controllerFornitore.regione}" required="true"
+				requiredMessage="Campo obbligatorio" id="regione">
+			</h:inputText>
+			<h:message for="regione" styleClass="error" />
+		</div>
+		<div>
+			Cap:
+			<h:inputText value="#{controllerFornitore.codicePostale}"
+				required="true" requiredMessage="Campo obbligatorio"
+				id="codicePostale">
+			</h:inputText>
+			<h:message for="codicePostale" styleClass="error" />
+		</div>
+		<div>
+			Nazione:
+			<h:inputText value="#{controllerFornitore.stato}" required="true"
+				requiredMessage="Campo obbligatorio" id="stato">
+			</h:inputText>
+			<h:message for="stato" styleClass="error" />
+		</div>
+		<div>
+			Numero telefonico:
+			<h:inputText value="#{controllerFornitore.telefono}" required="true"
+				requiredMessage="Campo obbligatorio" id="telefono">
+			</h:inputText>
+			<h:message for="telefono" styleClass="error" />
+		</div>
+		<div>
+			<h:commandButton value="Invia" action="#{controllerFornitore.creaFornitore()}"></h:commandButton>
+		</div>
+		<div>
+			<h:commandButton value="Torna indietro" action="#{controllerFornitore.listinoFornitori()}"></h:commandButton>
+		</div>
+	</h:form>
+</h:body>
+</html>

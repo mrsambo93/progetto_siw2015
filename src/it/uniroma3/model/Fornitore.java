@@ -1,5 +1,6 @@
 package it.uniroma3.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -17,10 +18,10 @@ import it.uniroma3.model.Prodotto;
 
 
 @Entity
-@NamedQuery(name = "findAllFornitori", query = "SELECT f FROM Fornitori f")
+@NamedQuery(name = "listinoFornitori", query = "SELECT f FROM Fornitore f")
 public class Fornitore {
 	
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
@@ -39,7 +40,13 @@ public class Fornitore {
     @ManyToMany
 	private List<Prodotto> prodotti;
     
-    public Fornitore() {}
+    public Fornitore(String partitaIva, String email, String telefono, Indirizzo indirizzo) {
+    	this.partitaIva = partitaIva;
+    	this.email = email;
+    	this.telefono = telefono;
+    	this.indirizzo = indirizzo;
+    	this.prodotti = new ArrayList<Prodotto>();
+    }
 
 	public Long getId() {
 		return id;
@@ -88,6 +95,10 @@ public class Fornitore {
 
 	public void setProdotti(List<Prodotto> prodotti) {
 		this.prodotti = prodotti;
+	}
+	
+	public void aggiungiProdotto(Prodotto prodotto) {
+		this.prodotti.add(prodotto);
 	}
 
 }
