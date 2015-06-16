@@ -106,12 +106,12 @@
 		<navigation-case>
 			<from-action>#{controllerOrdine.annullaOrdine()}</from-action>
 			<from-outcome>success</from-outcome>
-			<to-view-id>/faces/ordineAnnullato.xhtml</to-view-id>
+			<to-view-id>/faces/operazioniCliente.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-action>#{controllerOrdine.terminaOrdine()}</from-action>
 			<from-outcome>success</from-outcome>
-			<to-view-id>/faces/ordiniCliente.xhtml</to-view-id>
+			<to-view-id>/faces/operazioniCliente.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
