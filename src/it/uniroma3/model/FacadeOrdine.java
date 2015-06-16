@@ -67,4 +67,8 @@ public class FacadeOrdine {
 		ord.setDataChiusura();
 	}
 	
+	public void tiEvado(Long idOrdine) {
+		Ordine ord = this.em.find(Ordine.class, idOrdine);
+		ord.setDataEvasione();
+	}
 }	

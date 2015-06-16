@@ -136,12 +136,24 @@
 			<from-outcome>success</from-outcome>
 			<to-view-id>/faces/listinoProdottiAdmin.xhtml</to-view-id>
 		</navigation-case>
+		<navigation-case>
+			<from-action>#{controllerOrdine.listinoOrdini()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/listinoOrdini.xhtml</to-view-id>
+		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
 		<from-view-id>/incrementoQta.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>success</from-outcome>
 			<to-view-id>/faces/listinoProdottiAdmin.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/listinoOrdini.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/dettagliOrdine.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 </faces-config>

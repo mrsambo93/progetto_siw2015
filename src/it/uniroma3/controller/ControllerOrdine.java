@@ -45,6 +45,11 @@ public class ControllerOrdine {
 		this.cliente = this.ordine.getCliente();
 		return "success";
 	}
+	
+	public String evadiOrdine() {
+		this.facadeOrdine.tiEvado(this.ordine.getId());
+		return "success";
+	}
 
 	public String aggiungiProdotto(){
 		Prodotto p = this.controllerProdotto.getProdotto();

@@ -3,47 +3,43 @@
 <h:head>
 
 	<title>Aggiungi Prodotto</title>
-<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
+	<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
 </h:head>
 <h:body>
 	<h1>Aggiungi nuovo prodotto</h1>
 	<h:form>
-		<div>
-			Nome: 
-			<h:inputText value="#{controllerProdotto.nome}"
-				required="true"
-				requiredMessage="Campo obbligatorio"
-				id="nome">
-			</h:inputText>
-			<h:message for="nome" styleClass="error"/>
-		</div>
-		<div>
-			Codice: 
-			<h:inputText value="#{controllerProdotto.codice}"
-				required="true"
-				requiredMessage="Campo obbligatorio"
-				id="codice">
-			</h:inputText>
-			<h:message for="codice" styleClass="error"/>
-		</div>
-		<div>
-			Descrizione: 
-			<h:inputTextarea value="#{controllerProdotto.descrizione}"
-				rows="6"
-				id="descrizione">
-			</h:inputTextarea>
-		</div>
-		<div>
-			Prezzo: 
-			<h:inputText value="#{controllerProdotto.prezzo}"
-				required="true"
-				requiredMessage="Campo obbligatorio"
-				id="prezzo">
-			</h:inputText>
-			<h:message for="prezzo" styleClass="error"/>
-		</div>
-		<div><h:commandButton id="submit" value="invia" action="riepilogoProdotto"/></div>
+		<table>
+			<tr>
+				<td style="width: 89px; ">Nome:</td>
+				<td style="width: 223px; "><h:inputText value="#{controllerProdotto.nome}"
+						required="true" requiredMessage="Campo obbligatorio" id="nome" style="width: 217px; ">
+					</h:inputText></td>
+				<td><h:message for="nome" styleClass="error" /></td>
+			</tr>
+			<tr>
+				<td>Codice:</td>
+				<td><h:inputText value="#{controllerProdotto.codice}"
+						required="true" requiredMessage="Campo obbligatorio" id="codice" style="width: 218px; ">
+					</h:inputText></td>
+				<td><h:message for="codice" styleClass="error" /></td>
+			</tr>
+			<tr>
+				<td>Descrizione:</td>
+				<td><h:inputTextarea value="#{controllerProdotto.descrizione}"
+						rows="6" id="descrizione" style="width: 218px; ">
+					</h:inputTextarea></td>
+			</tr>
+			<tr>
+				<td>Prezzo:</td>
+				<td><h:inputText value="#{controllerProdotto.prezzo}"
+						required="true" requiredMessage="Campo obbligatorio" id="prezzo" style="width: 217px; ">
+					</h:inputText></td>
+				<td><h:message for="prezzo" styleClass="error" /></td>
+			</tr>
+		</table>
+		<h:commandButton id="submit" value="Invia" action="riepilogoProdotto" />
+		<h:button value="Torna indietro" outcome="operazioniAdmin" />
 	</h:form>
-	<h:button value="torna indietro" outcome="operazioniAdmin"/>
+	
 </h:body>
 </html>

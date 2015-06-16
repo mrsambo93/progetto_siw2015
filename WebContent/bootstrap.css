@@ -17,6 +17,9 @@ body {
   margin-right:auto;
   width: 70%;
 }
+logo{
+	vertical-align: middle;
+}
 article,
 aside,
 details,

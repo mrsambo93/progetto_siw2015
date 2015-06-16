@@ -5,11 +5,11 @@
 	<title>Carrello Prodotti</title>
 	<meta charset="utf-8"></meta>
 	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
 	<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
 </h:head>
-<h:body>
-
-	<h1>Il tuo Carrello</h1>
+<h:body><h1>Il tuo Carrello</h1>
 	<h:dataTable value="#{controllerOrdine.righeOrdine}" var="riga"
 		styleClass="order-table" headerClass="order-table-header"
 		rowClasses="order-table-odd-row,order-table-even-row">
