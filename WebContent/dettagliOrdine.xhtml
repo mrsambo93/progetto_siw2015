@@ -26,8 +26,8 @@
 			<f:facet name="header">Prezzo      </f:facet>
 				#{riga.prezzoUnitario}
     	</h:column>
-    	<h:column>
-    		<f:facet name="header">Quantit&#224; disponibile</f:facet>
+		<h:column>
+			<f:facet name="header">Quantit&#224; disponibile</f:facet>
     			#{riga.prodotto.qtaMagazzino}
     	</h:column>
 		<h:column>
@@ -37,9 +37,11 @@
 	</h:dataTable>
 	<h:form>
 		<div>
-			<h:commandButton value="Visualizza informazioni cliene" action="#{controllerOrdine.cercaClienteDaOrdine(riga.ordine.id)}"></h:commandButton>
+			<h:commandButton value="Visualizza informazioni cliente"
+				action="#{controllerOrdine.cercaClienteDaOrdine(riga.ordine.id)}"></h:commandButton>
 		</div>
-		<h:commandButton value="Evadi ordine" action="#{controllerOrdine.evadiOrdine()}"></h:commandButton>
+		<h:commandButton value="Evadi ordine"
+			action="#{controllerOrdine.evadiOrdine()}"></h:commandButton>
 	</h:form>
 </h:body>
 </html>

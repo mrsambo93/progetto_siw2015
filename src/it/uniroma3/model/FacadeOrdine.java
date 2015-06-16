@@ -69,6 +69,19 @@ public class FacadeOrdine {
 	
 	public void tiEvado(Long idOrdine) {
 		Ordine ord = this.em.find(Ordine.class, idOrdine);
+		this.decrementaQtaMagazzino(ord);
 		ord.setDataEvasione();
+	}
+	
+	private boolean decrementaQtaMagazzino(Ordine ordine){
+		List<RigaOrdine> righeOrdine = ordine.getRigheOrdine();
+		for(RigaOrdine rigaOrdine : righeOrdine){
+			if(rigaOrdine.getQtaOrdinata()>rigaOrdine.getProdotto().getQtaMagazzino()){
+				return false;
+			}
+			Integer qtaTemp = rigaOrdine.getQtaOrdinata();
+			rigaOrdine.getProdotto().riduciQtaMagazzino(qtaTemp);
+		}
+		return true;
 	}
 }	
