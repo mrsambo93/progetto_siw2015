@@ -11,28 +11,25 @@
 <h:body>
 
 	<h1>Listino fornitori</h1>
-
-	<h:dataTable value="#{controllerFornitore.fornitori}" var="forn">
-		<h:column>
-			<f:facet name="header">Partita iva</f:facet>
-			<h:form>
+	<table>
+	<ui:repeat value="#{controllerFornitore.fornitori}" var="forn">
+		<tr>
+			<td>Partita iva</td>
+			<td>Email</td>
+			<td>Recapito telefonico</td>
+			<td>Indirizzo</td>
+		</tr>
+		<tr>
+			<td><h:form>
 				<h:commandLink value="#{forn.partitaIva}"
 					action="#{controllerFornitore.aggiungiFornitoreProdotto(forn.id)}"></h:commandLink>
-			</h:form>
-		</h:column>
-		<h:column>
-			<f:facet name="header">Email</f:facet>
-			#{forn.email}
-		</h:column>
-		<h:column>
-			<f:facet name="header">Telefono</f:facet>
-			#{forn.telefono}
-		</h:column>
-		<h:column>
-			<f:facet name="header">Indirizzo</f:facet>
-			#{forn.indirizzo.via} #{forn.indirizzo.citta} #{forn.indirizzo.regione} #{forn.indirizzo.codicePostale} #{forn.indirizzo.stato}
-		</h:column>
-	</h:dataTable>
+			</h:form></td>
+			<td>#{forn.email}</td>
+			<td>#{forn.telefono}</td>
+			<td>#{forn.indirizzo.via} #{forn.indirizzo.citta} #{forn.indirizzo.regione} #{forn.indirizzo.codicePostale} #{forn.indirizzo.stato}</td>
+		</tr>
+	</ui:repeat>
+	</table>
 	<div></div>
 	<h:button value="Aggiungi un nuovo fornitore" outcome="nuovoFornitore"></h:button>
 </h:body>
