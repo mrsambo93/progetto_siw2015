@@ -159,7 +159,7 @@
 	<navigation-rule>
 		<from-view-id>/dettagliOrdine.xhtml</from-view-id>
 		<navigation-case>
-			<from-action>#{controllerOrdine.cercaClienteDaOrdine()}</from-action>
+			<from-action>#{controllerOrdine.cercaClienteDaOrdine(controllerOrdine.ordine.id)}</from-action>
 			<from-outcome>success</from-outcome>
 			<to-view-id>/faces/dettagliCliente.xhtml</to-view-id>
 		</navigation-case>
@@ -184,6 +184,13 @@
 		<navigation-case>
 			<from-outcome>success</from-outcome>
 			<to-view-id>/faces/dettagliProdottoAdmin.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/dettagliCliente.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/listinoOrdini.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 </faces-config>

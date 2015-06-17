@@ -13,15 +13,16 @@
 	<h1>I tuoi ordini</h1>
 
 	<table>
+		<tr>
+			<td>Id ordine</td>
+			<td>Data di creazione</td>
+			<td>Data di chiusura</td>
+			<td>Data di evasione</td>
+		</tr>
 		<ui:repeat value="#{controllerOrdine.ordini}" var="ord"
 			styleClass="order-table" headerClass="order-table-header"
 			rowClasses="order-table-odd-row,order-table-even-row">
-			<tr>
-				<td>Id ordine</td>
-				<td>Data di creazione</td>
-				<td>Data di chiusura</td>
-				<td>Data di evasione</td>
-			</tr>
+			<tr></tr>
 			<tr>
 				<td><h:form>
 						<h:commandLink value="#{ord.id}"

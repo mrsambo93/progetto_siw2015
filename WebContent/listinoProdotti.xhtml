@@ -12,14 +12,15 @@
 
 	<h1>Listino prodotti</h1>
 	<table>
+		<tr>
+			<td>Nome</td>
+			<td>Prezzo</td>
+			<td>Quantit&#224; Disponbile</td>
+		</tr>
 		<ui:repeat value="#{controllerProdotto.catalogoProdotti}" var="prod"
 			styleClass="order-table" headerClass="order-table-header"
 			rowClasses="order-table-odd-row,order-table-even-row">
-			<tr>
-				<td>Nome</td>
-				<td>Prezzo</td>
-				<td>Quantit&#224; Disponbile</td>
-			</tr>
+			<tr></tr>
 			<tr>
 				<td><h:form>
 						<h:commandLink value="#{prod.nome}"

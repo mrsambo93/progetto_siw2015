@@ -13,25 +13,30 @@
 	<h1>Listino fornitori del prodotto</h1>
 
 	<table>
-	<ui:repeat value="#{controllerFornitore.fornitori}" var="forn">
 		<tr>
 			<td>Partita iva</td>
 			<td>Email</td>
 			<td>Recapito telefonico</td>
 			<td>Indirizzo</td>
 		</tr>
-		<tr>
-			<td>#{forn.partitaIva}</td>
-			<td>#{forn.email}</td>
-			<td>#{forn.telefono}</td>
-			<td>#{forn.indirizzo.via} #{forn.indirizzo.citta} #{forn.indirizzo.regione} #{forn.indirizzo.codicePostale} #{forn.indirizzo.stato}</td>
-		</tr>
-	</ui:repeat>
+		<ui:repeat value="#{controllerFornitore.fornitori}" var="forn">
+			<tr></tr>
+			<tr>
+				<td>#{forn.partitaIva}</td>
+				<td>#{forn.email}</td>
+				<td>#{forn.telefono}</td>
+				<td>#{forn.indirizzo.via} #{forn.indirizzo.citta}
+					#{forn.indirizzo.regione} #{forn.indirizzo.codicePostale}
+					#{forn.indirizzo.stato}</td>
+			</tr>
+		</ui:repeat>
 	</table>
 	<h:form>
-		<h:commandButton value="Aggiungi un fornitore" action="#{controllerFornitore.listinoFornitori()}"></h:commandButton>
+		<h:commandButton value="Aggiungi un fornitore"
+			action="#{controllerFornitore.listinoFornitori()}"></h:commandButton>
 		<div></div>
-		<h:button value="Torna alle informazioni sul prodotto" outcome="dettagliProdottoAdmin"></h:button>
+		<h:button value="Torna alle informazioni sul prodotto"
+			outcome="dettagliProdottoAdmin"></h:button>
 	</h:form>
 </h:body>
 </html>

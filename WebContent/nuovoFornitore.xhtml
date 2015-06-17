@@ -10,63 +10,65 @@
 <h:body>
 	<h1>Nuovo fornitore</h1>
 	<h:form>
-		<div>
-			Partita iva:
-			<h:inputText value="#{controllerFornitore.partitaIva}" required="true"
+		<table>
+		<tr>
+			<td>Partita iva:</td>
+			<td><h:inputText value="#{controllerFornitore.partitaIva}" required="true"
 				requiredMessage="Campo obbligatorio" id="partitaIva">
-			</h:inputText>
-			<h:message for="partitaIva" styleClass="error" />
-		</div>
-		<div>
-			Indirizzo e-mail:
-			<h:inputText value="#{controllerFornitore.email}" required="true"
+			</h:inputText></td>
+			<td><h:message for="partitaIva" styleClass="error" /></td>
+		</tr>
+		<tr>
+			<td>Indirizzo e-mail:</tr></td>
+			<td><h:inputText value="#{controllerFornitore.email}" required="true"
 				requiredMessage="Campo obbligatorio" id="email">
-			</h:inputText>
-			<h:message for="email" styleClass="error" />
-		</div>
-		<div>
-			Indirizzo di residenza:
-			<h:inputText value="#{controllerFornitore.via}" required="true"
+			</h:inputText></td>
+			<td><h:message for="email" styleClass="error" /></td>
+		</tr>
+		<tr>
+			<td>Indirizzo di residenza:</td>
+			<td><h:inputText value="#{controllerFornitore.via}" required="true"
 				requiredMessage="Campo obbligatorio" id="via">
-			</h:inputText>
-			<h:message for="via" styleClass="error" />
-		</div>
-		<div>
-			Citt&#224;:
-			<h:inputText value="#{controllerFornitore.citta}" required="true"
+			</h:inputText></td>
+			<td><h:message for="via" styleClass="error" /></td>
+		</tr>
+		<tr>
+			<td>Citt&#224;:</td>
+			<td><h:inputText value="#{controllerFornitore.citta}" required="true"
 				requiredMessage="Campo obbligatorio" id="citta">
-			</h:inputText>
-			<h:message for="citta" styleClass="error" />
-		</div>
-		<div>
-			Regione:
-			<h:inputText value="#{controllerFornitore.regione}" required="true"
+			</h:inputText></td>
+			<td><h:message for="citta" styleClass="error" /></td>
+		</tr>
+		<tr>
+			<td>Regione:</td>
+			<td><h:inputText value="#{controllerFornitore.regione}" required="true"
 				requiredMessage="Campo obbligatorio" id="regione">
-			</h:inputText>
-			<h:message for="regione" styleClass="error" />
-		</div>
-		<div>
-			Cap:
-			<h:inputText value="#{controllerFornitore.codicePostale}"
+			</h:inputText></td>
+			<td><h:message for="regione" styleClass="error" /></td>
+		</tr>
+		<tr>
+			<td>Cap:</td>
+			<td><h:inputText value="#{controllerFornitore.codicePostale}"
 				required="true" requiredMessage="Campo obbligatorio"
 				id="codicePostale">
-			</h:inputText>
-			<h:message for="codicePostale" styleClass="error" />
-		</div>
-		<div>
-			Nazione:
-			<h:inputText value="#{controllerFornitore.stato}" required="true"
+			</h:inputText></td>
+			<td><h:message for="codicePostale" styleClass="error" /></td>
+		</tr>
+		<tr>
+			<td>Nazione:</td>
+			<td><h:inputText value="#{controllerFornitore.stato}" required="true"
 				requiredMessage="Campo obbligatorio" id="stato">
-			</h:inputText>
-			<h:message for="stato" styleClass="error" />
-		</div>
-		<div>
-			Numero telefonico:
-			<h:inputText value="#{controllerFornitore.telefono}" required="true"
+			</h:inputText></td>
+			<td><h:message for="stato" styleClass="error" /></td>
+		</tr>
+		<tr>
+			<td>Numero telefonico:</td>
+			<td><h:inputText value="#{controllerFornitore.telefono}" required="true"
 				requiredMessage="Campo obbligatorio" id="telefono">
-			</h:inputText>
-			<h:message for="telefono" styleClass="error" />
-		</div>
+			</h:inputText></td>
+			<td><h:message for="telefono" styleClass="error" /></td>
+		</tr>
+		</table>
 		<div>
 			<h:commandButton value="Invia" action="#{controllerFornitore.creaFornitore()}"></h:commandButton>
 		</div>

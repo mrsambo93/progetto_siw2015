@@ -9,19 +9,19 @@
 <h:body>
 	<h1>Dettagli cliente</h1>
 	<ul>
-		<li>Nome: <h:outputText
-				value="${controllerProdotto.prodotto.nome}"></h:outputText></li>
+		<li>Nome: <h:outputText value="${controllerOrdine.cliente.nome}"></h:outputText></li>
 		<li>Cognome: <h:outputText
-				value="${controllerProdotto.prodotto.codice}"></h:outputText></li>
+				value="#{controllerOrdine.cliente.cognome}"></h:outputText></li>
 		<li>Email: <h:outputText
-				value="${controllerProdotto.prodotto.descrizione}"></h:outputText></li>
-		<li>Prezzo: <h:outputText
-				value="${controllerProdotto.prodotto.prezzo}"></h:outputText></li>
-		<li>Quantit&#224; disponibile: <h:outputText
-				value="${controllerProdotto.prodotto.qtaMagazzino}"></h:outputText></li>
+				value="#{controllerOrdine.cliente.email}"></h:outputText></li>
+		<li>Data di registrazione: #{controllerOrdine.cliente.dataDiRegistrazione}</li>
+		<li>Indirizzo: <h:outputText
+				value="#{controllerOrdine.cliente.indirizzo.via}&#160;#{controllerOrdine.cliente.indirizzo.citta}&#160;
+					#{controllerOrdine.cliente.indirizzo.regione}&#160;#{controllerOrdine.cliente.indirizzo.codicePostale}&#160;
+					#{controllerOrdine.cliente.indirizzo.stato}"></h:outputText></li>
 		<h:form>
 			<h:commandButton value="Torna al listino"
-				action="#{controllerProdotto.listinoProdotti()}">
+				action="#{controllerOrdine.listinoOrdini()}">
 			</h:commandButton>
 		</h:form>
 	</ul>

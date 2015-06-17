@@ -13,15 +13,16 @@
 <h:body>
 	<h1>Il tuo Carrello</h1>
 	<table>
+		<tr>
+			<td>Nome</td>
+			<td>Codice</td>
+			<td>Prezzo</td>
+			<td>Quantit&#224; ordinata</td>
+		</tr>
 		<ui:repeat value="#{controllerOrdine.righeOrdine}" var="riga"
 			styleClass="order-table" headerClass="order-table-header"
 			rowClasses="order-table-odd-row,order-table-even-row">
-			<tr>
-				<td>Nome</td>
-				<td>Codice</td>
-				<td>Prezzo</td>
-				<td>Quantit&#224; ordinata</td>
-			</tr>
+			<tr></tr>
 			<tr>
 				<td>#{riga.prodotto.nome}</td>
 				<td>#{riga.prodotto.codice}</td>

@@ -12,23 +12,26 @@
 
 	<h1>Listino fornitori</h1>
 	<table>
-	<ui:repeat value="#{controllerFornitore.fornitori}" var="forn">
 		<tr>
 			<td>Partita iva</td>
 			<td>Email</td>
 			<td>Recapito telefonico</td>
 			<td>Indirizzo</td>
 		</tr>
-		<tr>
-			<td><h:form>
-				<h:commandLink value="#{forn.partitaIva}"
-					action="#{controllerFornitore.aggiungiFornitoreProdotto(forn.id)}"></h:commandLink>
-			</h:form></td>
-			<td>#{forn.email}</td>
-			<td>#{forn.telefono}</td>
-			<td>#{forn.indirizzo.via} #{forn.indirizzo.citta} #{forn.indirizzo.regione} #{forn.indirizzo.codicePostale} #{forn.indirizzo.stato}</td>
-		</tr>
-	</ui:repeat>
+		<ui:repeat value="#{controllerFornitore.fornitori}" var="forn">
+			<tr></tr>
+			<tr>
+				<td><h:form>
+						<h:commandLink value="#{forn.partitaIva}"
+							action="#{controllerFornitore.aggiungiFornitoreProdotto(forn.id)}"></h:commandLink>
+					</h:form></td>
+				<td>#{forn.email}</td>
+				<td>#{forn.telefono}</td>
+				<td>#{forn.indirizzo.via} #{forn.indirizzo.citta}
+					#{forn.indirizzo.regione} #{forn.indirizzo.codicePostale}
+					#{forn.indirizzo.stato}</td>
+			</tr>
+		</ui:repeat>
 	</table>
 	<div></div>
 	<h:button value="Aggiungi un nuovo fornitore" outcome="nuovoFornitore"></h:button>
