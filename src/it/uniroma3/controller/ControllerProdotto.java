@@ -15,7 +15,6 @@ public class ControllerProdotto {
 	
 	@EJB
 	private FacadeProdotto facadeProdotto;
-	
 	private Long id;
 	private String nome;
 	private String codice;

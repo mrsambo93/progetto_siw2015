@@ -13,18 +13,12 @@ public class FacadeProdotto {
 	@PersistenceContext(unitName = "unit-progetto")
 	private EntityManager em;
 	
-	//UC4
 	public Prodotto creaProdotto(String nome, String codice, String descrizione, Float prezzo) {
-		Prodotto prodotto = new Prodotto(nome,codice,descrizione,prezzo);	
-//		Prodotto temp = this.em.find(Prodotto.class, prodotto.getCodice());
-//		if(temp != null) {
+		Prodotto prodotto = new Prodotto(nome,codice,descrizione,prezzo);
 		this.em.persist(prodotto);
 		return prodotto;
-//		}
-//		return null;
 	}
 	
-	//UC1,UC2
 	public List<Prodotto> catalogoProdotti() {
 		TypedQuery<Prodotto> query = this.em.createNamedQuery("catalogoProdotti", Prodotto.class);
 		return query.getResultList();

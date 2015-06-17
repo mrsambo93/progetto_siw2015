@@ -1,9 +1,13 @@
 package it.uniroma3.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
 import javax.persistence.Column;
 
@@ -27,6 +31,9 @@ public class Prodotto {
 	private Float prezzo;
 	
 	private Integer qtaMagazzino;
+	
+	@ManyToMany(mappedBy="prodotti")
+	private List<Fornitore> fornitori;
 
 	public Prodotto() {}
 
@@ -36,6 +43,7 @@ public class Prodotto {
 		this.descrizione = descrizione;
 		this.prezzo = prezzo;
 		this.qtaMagazzino = 0;
+		this.fornitori = new ArrayList<Fornitore>();
 	}
 	
 	public void aggiungiQtaMagazzino(Integer qta) {
@@ -96,6 +104,18 @@ public class Prodotto {
 
 	public void setQtaMagazzino(int qtaMagazzino) {
 		this.qtaMagazzino = qtaMagazzino;
+	}
+
+	public List<Fornitore> getFornitori() {
+		return fornitori;
+	}
+
+	public void setFornitori(List<Fornitore> fornitori) {
+		this.fornitori = fornitori;
+	}
+	
+	public void aggiungiFornitore(Fornitore fornitore) {
+		this.fornitori.add(fornitore);
 	}
 
 	public boolean equals(Object obj) {

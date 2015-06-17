@@ -1,0 +1,36 @@
+<html lang="en" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+
+	<title>Listino Fornitori</title>
+	<meta charset="utf-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
+</h:head>
+<h:body>
+
+	<h1>Listino fornitori</h1>
+	<table>
+	<ui:repeat value="#{controllerFornitore.fornitori}" var="forn">
+		<tr>
+			<td>Partita iva</td>
+			<td>Email</td>
+			<td>Recapito telefonico</td>
+			<td>Indirizzo</td>
+		</tr>
+		<tr>
+			<td><h:form>
+				<h:commandLink value="#{forn.partitaIva}"
+					action="#{controllerFornitore.aggiungiFornitoreProdotto(forn.id)}"></h:commandLink>
+			</h:form></td>
+			<td>#{forn.email}</td>
+			<td>#{forn.telefono}</td>
+			<td>#{forn.indirizzo.via} #{forn.indirizzo.citta} #{forn.indirizzo.regione} #{forn.indirizzo.codicePostale} #{forn.indirizzo.stato}</td>
+		</tr>
+	</ui:repeat>
+	</table>
+	<div></div>
+	<h:button value="Aggiungi un nuovo fornitore" outcome="nuovoFornitore"></h:button>
+</h:body>
+</html>
