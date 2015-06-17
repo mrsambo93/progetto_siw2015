@@ -47,8 +47,7 @@ public class ControllerOrdine {
 	}
 	
 	public String evadiOrdine() {
-		this.facadeOrdine.tiEvado(this.ordine.getId());
-		return "success";
+		return this.facadeOrdine.tiEvado(this.ordine.getId());
 	}
 
 	public String aggiungiProdotto(){

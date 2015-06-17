@@ -67,21 +67,27 @@ public class FacadeOrdine {
 		ord.setDataChiusura();
 	}
 	
-	public void tiEvado(Long idOrdine) {
+	public String tiEvado(Long idOrdine) {
 		Ordine ord = this.em.find(Ordine.class, idOrdine);
-		this.decrementaQtaMagazzino(ord);
-		ord.setDataEvasione();
+		if(ord.getDataEvasione()!=null){
+			return "giaEvaso";
+		}
+		String state = this.decrementaQtaMagazzino(ord);
+		if(state.equals("evaso")){
+			ord.setDataEvasione();
+		}
+		return state;
 	}
 	
-	private boolean decrementaQtaMagazzino(Ordine ordine){
+	private String decrementaQtaMagazzino(Ordine ordine){
 		List<RigaOrdine> righeOrdine = ordine.getRigheOrdine();
 		for(RigaOrdine rigaOrdine : righeOrdine){
 			if(rigaOrdine.getQtaOrdinata()>rigaOrdine.getProdotto().getQtaMagazzino()){
-				return false;
+				return "inSospeso";
 			}
 			Integer qtaTemp = rigaOrdine.getQtaOrdinata();
 			rigaOrdine.getProdotto().riduciQtaMagazzino(qtaTemp);
 		}
-		return true;
+		return "evaso";
 	}
 }	

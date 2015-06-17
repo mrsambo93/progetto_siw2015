@@ -165,7 +165,17 @@
 		</navigation-case>
 		<navigation-case>
 			<from-action>#{controllerOrdine.evadiOrdine()}</from-action>
-			<from-outcome>success</from-outcome>
+			<from-outcome>evaso</from-outcome>
+			<to-view-id>/faces/operazioniAdmin.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{controllerOrdine.evadiOrdine()}</from-action>
+			<from-outcome>inSospeso</from-outcome>
+			<to-view-id>/faces/ordineSospeso.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{controllerOrdine.evadiOrdine()}</from-action>
+			<from-outcome>giaEvaso</from-outcome>
 			<to-view-id>/faces/operazioniAdmin.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
