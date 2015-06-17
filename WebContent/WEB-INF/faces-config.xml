@@ -157,7 +157,6 @@
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-<<<<<<< HEAD
 		<from-view-id>/dettagliOrdine.xhtml</from-view-id>
 		<navigation-case>
 			<from-action>#{controllerOrdine.cercaClienteDaOrdine()}</from-action>
@@ -178,12 +177,13 @@
 			<from-action>#{controllerOrdine.evadiOrdine()}</from-action>
 			<from-outcome>giaEvaso</from-outcome>
 			<to-view-id>/faces/operazioniAdmin.xhtml</to-view-id>
-=======
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
 		<from-view-id>/listinoFornitori.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>success</from-outcome>
 			<to-view-id>/faces/dettagliProdottoAdmin.xhtml</to-view-id>
->>>>>>> origin/master
 		</navigation-case>
 	</navigation-rule>
 </faces-config>
