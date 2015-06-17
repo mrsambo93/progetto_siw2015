@@ -2,9 +2,9 @@
 <tomee>
   <Resource id="PostgreSQL Database" type="DataSource">
     jdbcDriver = org.postgresql.Driver
-    jdbcUrl = jdbc:postgresql://52.28.153.251/siw
-    userName = pingofdeath
-    password = pingofdeath
+    jdbcUrl = jdbc:postgresql://localhost/siw
+    userName = postgres
+    password = postgres
     jtaManaged = true
     defaultAutoCommit = false
   </Resource>
