@@ -22,6 +22,8 @@ public class FacadeCliente {
 	
 	public boolean autenticaAutente(String email, String password){
 		Cliente cliente =  this.em.find(Cliente.class, email);
+		if(cliente==null)
+			return false;
 		return cliente.verificaCredenziali(password);
 	}
 	
